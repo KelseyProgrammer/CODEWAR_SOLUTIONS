@@ -516,4 +516,138 @@ function gooseFilter (birds) {
   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
   let filteredBirds = birds.filter((b) => !geese.includes(b));
   return filteredBirds;
-}    
+}   
+// 29: Grasshopper - Personalized Message - lvl 8
+// Description:
+// Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+// 
+// Use conditionals to return the proper message:
+// 
+// case	return
+// name equals owner	'Hello boss'
+// otherwise	'Hello guest'
+function greet (name, owner) {
+  return name === owner ? 'Hello boss': 'Hello guest'
+ }
+// 28: Name Shuffler - lvl 8
+// Description:
+// Write a function that returns a string in which firstname is swapped with last name.
+// 
+// Example(Input --> Output)
+// 
+// "john McClane" --> "McClane john"
+function nameShuffler(str){
+  return str.split(' ').reverse().join(' ');
+ } 
+ 
+//  27: Removing Elements - lvl 8
+//  Description:
+//  Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+//  
+//  Example:
+//  ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+ 
+//  None of the arrays will be empty, so you don't have to worry about that! 
+function removeEveryOther(arr){
+  let newArr = []
+  for(i = 0; i < arr.length; i += 2){
+    newArr.push(arr[i]);
+}
+  return newArr
+  }
+
+// 26: Find the smallest integer in the array - lvl 8
+// Description:
+// Given an array of integers your solution should find the smallest integer.
+
+// For example:
+
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+function findSmallestInt(arr) {
+  arr.sort((a,b) => a-b);
+   return arr[0];
+ }
+// 25: Fake Binanry - lvl 8
+// Description:
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+// 
+// Note: input will never be an empty string
+function fakeBin(x){
+  return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+// 24: Remove First and Last Character - lvl 8
+// Description:
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
+function removeChar(str){
+  return str.slice(1, -1);
+  };
+// 23: Double Char - lvl 8
+// Description:
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+// 
+// Examples (Input -> Output):
+// * "String"      -> "SSttrriinngg"
+// * "Hello World" -> "HHeelllloo  WWoorrlldd"
+// * "1234!_ "     -> "11223344!!__  "
+const doubleChar = (str) => str.split("").map(c => c + c).join("");
+// 22: Function 2 - squaring an argument - lvl 8
+// Description:
+// Now you have to write a function that takes an argument and returns the square of it.
+const square = (n) => n * n;
+// 21: What is between - lvl 8
+// Description:
+// Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+// 
+// For example:
+// 
+// a = 1
+// b = 4
+// --> [1, 2, 3, 4]
+function between(a, b) {
+  let arr = []
+
+  for(i = a; i <= b; i++){
+    arr.push(i)
+  }
+    return arr
+}
+// 20: Grasshopper - Debug sayHello - lvl 8
+// Description:
+// Debugging sayHello function
+// The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+// 
+// Example output:
+// 
+// Hello, Mr. Spock
+function sayHello(name) {
+  return `Hello, ${name}`;
+}
+// 19: Grasshopper - Check for factor - lvl 8
+// Description:
+// This function should test if the factor is a factor of base.
+// 
+// Return true if it is a factor or false if it is not.
+// 
+// About factors
+// Factors are numbers you can multiply together to get another number.
+// 
+// 2 and 3 are factors of 6 because: 2 * 3 = 6
+// 
+// You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+// You can use the mod operator (%) in most languages to check for a remainder
+// For example 2 is not a factor of 7 because: 7 % 2 = 1
+// 
+// Note: base is a non-negative number, factor is a positive number.
+function checkForFactor (base, factor) {
+  return base % factor === 0 ? true : false;
+ }
+ 
+
+
+
+
+
+  
+
