@@ -643,7 +643,220 @@ function sayHello(name) {
 function checkForFactor (base, factor) {
   return base % factor === 0 ? true : false;
  }
+// 18: Function 1 - hello world - lvl 8
+// Description:
+// Make a simple function called greet that returns the most-famous "hello world!".
+// 
+// Style Points
+// Sure, this is about as easy as it gets. But how clever can you be to create the most creative "hello world" you can think of? 
+// What is a "hello world" solution you would want to show your friends?
+function greet(){
+  return 'hello world!';
+}
+// 17: Find Maximum and Minimum Values of a List - lvl 8
+// Description:
+// Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively. Each function returns one number.
+// 
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+
+var min = function(list){
+  list.sort((a , b) => (a - b));
+    return list[0];
+}
+
+var max = function(list){
+    list.sort((a , b) => (b - a));
+    return list[0];
+}
+// 16: Beginner Series #1 School Paperwork - lvl 8
+// Description:
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+// 
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+// 
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+function paperwork(n, m) {
+  return n > 0 && m > 0 ? n * m : 0
+}
+// 15: Parse nice int from char problem - lvl 8
+// Description:
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+// 
+// Write a program that returns the girl's age (0-9) as an integer.
+// 
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+function getAge(inputString){
+  return parseInt(inputString);
+ }
+// 14: Quarter of the year - lvl 8
+// Description:
+// Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+// 
+// For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+// 
+// Constraint:
+// 
+// 1 <= month <= 12
+const quarterOf = (month) => {
+  if(month <= 3){
+    return 1
+   }
+   else if(month <= 6){
+     return 2
+   }
+   else if(month <= 9){
+     return 3
+   }
+   else if(month <= 12){
+     return 4
+   }
+};
+// 13: Twice as old - lvl 8
+// Description:
+// Your function takes two arguments:
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). 
+// The answer is always greater or equal to 0, no matter if it was
+//  in the past or it is in the future.
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  return Math.abs(dadYearsOld - 2 * sonYearsOld);
+ }
+// 12: MakeUpperCase - lvl 8
+// Description:
+// Write a function which converts the input string to uppercase.
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+// 11: Return Negative - lvl 8
+// Description:
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+// 10: Thinkful - Logic Drills: Traffic light - lvl 8
+// Description:
+// You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+// 
+// Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+// 
+// For example, when the input is green, output should be yellow.
+function updateLight(current) {
+  return current === 'yellow' ? 'red': current === 'green' ? 'yellow': 'green';
+
+}
+// 9: Volume of a Cuboid - lvl 8
+// Description:
+// Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+  return length * width * height;
+  }
+}
+// 8: Abbreviate a Two Word Name - lvl 8
+// Description:
+// Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+// 
+// The output should be two capital letters with a dot separating them.
+// 
+// It should look like this:
+// 
+// Sam Harris => S.H
+// 
+// patrick feeney => P.F
+function abbrevName(name){
  
+  var nameArray = name.split(" ");
+ 
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+// 7: Convert a Boolean to a String - lvl 8
+// Description:
+// Implement a function which convert the given boolean value into its string representation.
+// 
+// Note: Only valid inputs will be given.
+function booleanToString(b){
+  return b.toString();
+  }
+// 6: Convert boolean values to strings 'Yes' or 'No'. - lvl 8
+// Description:
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+function boolToWord( bool ){
+  return bool ? "Yes": "No";
+}
+// 5: Simple multiplication - lvl 8
+// Description:
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+function simpleMultiplication(n) {
+  return n % 2 === 0 ? n * 8 : n * 9
+ }
+// 4: Opposite number - lvl 8
+// Description:
+// Very simple, given a number (integer / decimal / both depending on the language), find its opposite (additive inverse).
+//  
+// Examples:
+//  
+//  1: -1
+//  14: -14
+//  -34: 34
+function opposite(number) {
+  return - number
+}
+// 3: A Needle in the Haystack - lvl 8
+// Description:
+// Can you find the needle in the haystack?
+// 
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// 
+// After your function finds the needle it should return a message (as a string) that says:
+// 
+// "found the needle at position " plus the index it found the needle, so:
+// 
+// Example(Input --> Output)
+// 
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
+// 2: Convert a Number to a String! - lvl 8
+// Description:
+// We need a function that can transform a number (integer) into a string.
+// 
+// What ways of achieving this do you know?
+// 
+// Examples (input --> output):
+// 123  --> "123"
+// 999  --> "999"
+// -100 --> "-100"
+function numberToString(num) {
+  return num.toString()
+}
+// 1: Even or Odd - lvl 8
+// Description:
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+function evenOrOdd(number) {
+  if(number % 2 ===0){
+    return "Even"
+  }else{
+    return "Odd"
+  }
+    
+ }
+
+
+
+
+
+
+ 
+
+
 
 
 
