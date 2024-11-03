@@ -1,3 +1,22 @@
+// 70: Is it a palindrome? - lvl 8
+// Description:
+// Write a function that checks if a given string (case insensitive) is a palindrome.
+// 
+// A palindrome is a word, number, phrase, or other sequence of symbols that reads the
+//  same backwards as forwards, such as madam or racecar.
+
+function isPalindrome(x) {
+  let lowerCaseStr = x.toLowerCase()
+  return lowerCaseStr === x.toLowerCase().split('').reverse().join('')
+  }
+
+// 69: String Repeat - lvl 8
+// Description:
+// Write a function that accepts an integer n and a string s as parameters,
+// and returns a string of s repeated exactly n times.
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
 // 68: Equal Sides of An Array - lvl 6
 // Description:
 // You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.
