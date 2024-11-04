@@ -1,3 +1,44 @@
+// 72: Grasshopper - Terminal game move function - lvl 8
+// Description:
+// Terminal game move function
+// In this game, the hero moves from left to right. The player rolls the dice and moves the number of spaces indicated by the dice two times.
+// 
+// Create a function for the terminal game that takes the current position of the hero and the roll (1-6) and return the new position.
+// 
+// Example:
+// move(3, 6) should equal 15
+function move (position, roll) {
+  let newPosition = roll + roll + position
+  return newPosition
+}
+
+// 71: Take a 10 minute walk - lvl 6
+// Description:
+// You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+// 
+// Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
+function isValidWalk(walk) {
+  // Check if the walk takes exactly 10 minutes
+  if (walk.length !== 10) {
+    return false;
+  }
+
+  // Initialize counters for north-south and east-west directions
+  let northSouth = 0;
+  let eastWest = 0;
+
+  // Iterate over the walk directions
+  for (let direction of walk) {
+    if (direction === 'n') northSouth += 1;
+    if (direction === 's') northSouth -= 1;
+    if (direction === 'e') eastWest += 1;
+    if (direction === 'w') eastWest -= 1;
+  }
+
+  // Check if both northSouth and eastWest are 0 (back to the starting point)
+  return northSouth === 0 && eastWest === 0;
+}
+
 // 70: Is it a palindrome? - lvl 8
 // Description:
 // Write a function that checks if a given string (case insensitive) is a palindrome.
