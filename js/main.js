@@ -1,3 +1,42 @@
+// 76: Bouncing Balls - lvl 6
+// A child is playing with a ball on the nth floor of a tall building. The height of this floor above ground level, h, is known.
+// 
+// He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+// 
+// His mother looks out of a window 1.5 meters from the ground.
+// 
+// How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing)?
+// 
+// Three conditions must be met for a valid experiment:
+// Float parameter "h" in meters must be greater than 0
+// Float parameter "bounce" must be greater than 0 and less than 1
+// Float parameter "window" must be less than h.
+// If all three conditions above are fulfilled, return a positive integer, otherwise return -1.
+// 
+// Note:
+// The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.
+// 
+// Examples:
+// - h = 3, bounce = 0.66, window = 1.5, result is 3
+// 
+// - h = 3, bounce = 1, window = 1.5, result is -1 
+// 
+// (Condition 2) not fulfilled).
+// PuzzlesAlgorithmsMathematics
+// Suggest kata description edits
+function bouncingBall(h, bounce, window) {
+  if (h > 0 && bounce > 0 && bounce < 1 && window < h) {
+    let count = 1;
+    h = h * bounce;
+    while (h > window) {
+      count += 2;
+      h *= bounce;
+    }
+    return count; 
+  } else {
+    return -1;
+  }
+}
 // 75: Is he gonna survive? - lvl 8
 // Description:
 // A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
