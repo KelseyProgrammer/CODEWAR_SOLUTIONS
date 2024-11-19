@@ -1,3 +1,47 @@
+// 87: Square every digit - lvl 7
+// Description:
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+// 
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+// 
+// Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-25)
+// 
+// Note: The function accepts an integer and returns an integer.
+// 
+// Happy Coding!
+function squareDigits(num){
+  return Number(
+    String(num)
+    .split('')
+    .map(digit => digit ** 2)
+    .join('')
+  );
+}
+
+
+// 86: Your order please - lvl 6
+// Description:
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+// 
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// 
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+// 
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+function order(words) {
+  const wordsArray = words.split(" ");
+
+  const sortedArray = wordsArray.sort((a, b) => {
+    const numA = a.match(/\d/); 
+    const numB = b.match(/\d/);
+    return numA - numB;       
+  });
+
+  return sortedArray.join(" ");
+}
 // 85: Anagram Detection - lvl 7
 // Description:
 // An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
