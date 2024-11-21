@@ -1,3 +1,9 @@
+// 88: Hex to Decimal - lvl 8
+// Description:
+// Complete the function which converts hex number (given as a string) to a decimal number.
+function hexToDec(hexString){
+  return  parseInt(hexString, 16);
+ }
 // 87: Square every digit - lvl 7
 // Description:
 // Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
