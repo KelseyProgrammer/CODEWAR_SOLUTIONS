@@ -1,3 +1,84 @@
+// 93: Grasshopper - Grade Book - lvl 8
+// Description:
+// Grade book
+// Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+// 
+// Numerical Score	Letter Grade
+// 90 <= score <= 100	'A'
+// 80 <= score < 90	'B'
+// 70 <= score < 80	'C'
+// 60 <= score < 70	'D'
+// 0 <= score < 60	'F'
+// Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+
+
+Home
+Report home for your next assignment
+Training
+Practice
+Complete challenging Kata to earn honor and ranks. Re-train to hone technique
+Freestyle Sparring
+Take turns remixing and refactoring others code through Kumite
+Community
+Leaderboards
+Achieve honor and move up the global leaderboards
+Chat
+Join our Discord server and chat with your fellow code warriors
+Discussions
+View our Github Discussions board to discuss general Codewars topics
+About
+Docs
+Learn about all of the different aspects of Codewars
+Blog
+Read the latest news from Codewars and the community
+KelseyProgrammer Avatar
+6 kyu
+195
+
+Name:Unknown
+Clan:Unknown
+Member Since:Aug 2024
+Last Seen:Nov 2024
+Profiles:
+Following:1
+Followers:0
+Allies:0
+View Profile Badges
+Earn extra honor and gain new allies!
+Honor is earned for each new codewarrior who joins.
+Learn more
+Ad
+What's new on Codewars?
+We're back with all the latest updates from our engineering team.
+Stats
+Kata
+Solutions
+Translations
+Collections
+Kumite
+Social
+Discourse
+Completed (95)
+Unfinished
+Obsolete
+8 kyu
+Grasshopper - Grade book
+JavaScript:
+function getGrade(s1, s2, s3) {
+  let average = (s1 + s2 + s3) / 3; 
+  
+  if (average >= 90 && average <= 100) {
+    return 'A';
+  } else if (average >= 80 && average < 90) {
+    return 'B';
+  } else if (average >= 70 && average < 80) {
+    return 'C';
+  } else if (average >= 60 && average < 70) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
 // 92: Friend or Foe - lvl 7
 // Description:
 // Make a program that filters a list of strings and returns a list with only your friends name in it.
