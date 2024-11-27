@@ -1,3 +1,16 @@
+// 94: Find the position - lvl 8
+// Description:
+// When provided with a letter, return its position in the alphabet.
+// 
+// Input :: "a"
+// 
+// Output :: "Position of alphabet: 1"
+// 
+// Note: Only lowercased English letters are tested
+function position(letter){
+  let alphabet = "0abcdefghijklmnopqrstuvwxyz"
+    return `Position of alphabet: ${alphabet.indexOf(letter)}`;
+    }
 // 93: Grasshopper - Grade Book - lvl 8
 // Description:
 // Grade book
