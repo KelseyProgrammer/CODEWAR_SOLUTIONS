@@ -1,3 +1,56 @@
+// 99: A wolf in sheep's clothing: 
+// Description:
+// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+// 
+// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+// 
+// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+  //  7      6      5      4      3            2      1
+// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+// 
+// Note: there will always be exactly one wolf in the array.
+// 
+// Examples
+// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+// 
+// Input: ["sheep", "sheep", "wolf"]
+// Output: "Pls go away and stop eating my sheep"
+function warnTheSheep(queue) {
+  queue = queue.reverse();
+    for (let i = 0; i < queue.length; i++){
+     if (queue[i] === "wolf"){
+        if (i === 0){
+         return "Pls go away and stop eating my sheep"
+       }else {
+         return `Oi! Sheep number ${i}! You are about to be eaten by a wolf!`
+       };
+     }
+    }
+    }
+// 98: Is this a triangle? - lvl 7
+// Description:
+// Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+// 
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+// 
+// Examples:
+// 
+// Input -> Output
+// 1,2,2 -> true
+// 4,2,3 -> true
+// 2,2,2 -> true
+// 1,2,3 -> false
+// -5,1,3 -> false
+// 0,2,3 -> false
+// 1,2,9 -> false 
+function isTriangle(a,b,c){
+  if (a + b > c && a + c > b && b + c > a){
+   return true;
+}else {
+   return false;
+  }
+}
 // 97: Growth of a Population - lvl 7
 // Description:
 // In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?
