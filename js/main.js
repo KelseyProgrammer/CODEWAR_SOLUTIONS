@@ -1,4 +1,14 @@
-// 99: A wolf in sheep's clothing: 
+// 100: Detect Pangram - lvl 6
+// Description:
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+// 
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+function isPangram(word){
+  let alpha = "abcdefghijklmnopqrstuvwxyz"
+  let fixed = word.toLowerCase()
+ return [...alpha].every(letter => fixed.includes(letter));
+  }
+// 99: A wolf in sheep's clothing: lvl 8
 // Description:
 // Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
 // 
@@ -169,60 +179,6 @@ function position(letter){
 // 60 <= score < 70	'D'
 // 0 <= score < 60	'F'
 // Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
-
-
-Home
-Report home for your next assignment
-Training
-Practice
-Complete challenging Kata to earn honor and ranks. Re-train to hone technique
-Freestyle Sparring
-Take turns remixing and refactoring others code through Kumite
-Community
-Leaderboards
-Achieve honor and move up the global leaderboards
-Chat
-Join our Discord server and chat with your fellow code warriors
-Discussions
-View our Github Discussions board to discuss general Codewars topics
-About
-Docs
-Learn about all of the different aspects of Codewars
-Blog
-Read the latest news from Codewars and the community
-KelseyProgrammer Avatar
-6 kyu
-195
-
-Name:Unknown
-Clan:Unknown
-Member Since:Aug 2024
-Last Seen:Nov 2024
-Profiles:
-Following:1
-Followers:0
-Allies:0
-View Profile Badges
-Earn extra honor and gain new allies!
-Honor is earned for each new codewarrior who joins.
-Learn more
-Ad
-What's new on Codewars?
-We're back with all the latest updates from our engineering team.
-Stats
-Kata
-Solutions
-Translations
-Collections
-Kumite
-Social
-Discourse
-Completed (95)
-Unfinished
-Obsolete
-8 kyu
-Grasshopper - Grade book
-JavaScript:
 function getGrade(s1, s2, s3) {
   let average = (s1 + s2 + s3) / 3; 
   
