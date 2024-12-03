@@ -1,3 +1,16 @@
+// 101: Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence - lvl 8
+// Description:
+// Description:
+// Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+// 
+// Examples
+// replace("Hi!") === "H!!"
+// replace("!Hi! Hi!") === "!H!! H!!"
+// replace("aeiou") === "!!!!!"
+// replace("ABCDE") === "!BCD!"
+function replace(s){
+ return s.replace(/[aeiouAEIOU]/g, "!");
+}
 // 100: Detect Pangram - lvl 6
 // Description:
 // A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
