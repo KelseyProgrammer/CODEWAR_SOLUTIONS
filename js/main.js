@@ -1,3 +1,24 @@
+// 103 : Break camelCase - lvl 6
+// Description:
+// Complete the solution so that the function will break up camel casing, using a space between words.
+// 
+// Example
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+function solution(string) {
+  let fixed = "";
+  for (let i = 0; i < string.length; i++){
+    if (string[i] === string[i].toUpperCase() && string[i] !== string[i].toLowerCase()){
+     fixed += " " + string[i];
+    }else {
+      fixed += string[i];
+    }
+  }
+    return fixed;
+
+}
+
 // 102: Multiplication table for number - lvl 8
 // Description:
 // Your goal is to return multiplication table for number that is always an integer from 1 to 10.
