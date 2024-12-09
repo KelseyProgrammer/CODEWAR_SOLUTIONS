@@ -1,4 +1,23 @@
-// 106: How good are you really? - lvl 8
+// 107: Exclamation marks series #1: Remove an exclamation mark from the end of string - lvl 8
+// Description:
+// Remove an exclamation mark from the end of a string. For a beginner kata, you can assume that the input data is always a string, no need to verify it.
+// Examples
+// "Hi!"     ---> "Hi"
+// 
+// "Hi!!!"   ---> "Hi!!"
+// "!Hi"     ---> "!Hi"
+// "!Hi!"    ---> "!Hi"
+// "Hi! Hi!" ---> "Hi! Hi"
+// "Hi"      ---> "Hi"
+function remove (string){
+  if (string.endsWith('!')) {
+    return string.slice(0, -1);
+  }else {
+    return string;
+  }
+ 
+}
+//  106: How good are you really? - lvl 8
 // Description:
 // There was a test in your class and you passed it. Congratulations!
 
