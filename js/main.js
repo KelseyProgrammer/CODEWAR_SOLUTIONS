@@ -1,3 +1,31 @@
+// 109: Training JS #3: Basic data types--String - lvl 8
+// Description:
+// In javascript, String is one of basic data types. Use "" or '' to declare a string variable. It can be letters:a,b,c,A,B,C, numbers: 123..., Various symbol:@#$%^&* , Control symbol:\n,\t etc..
+// 
+// String can use operators +, Connect two or more strings together.
+// 
+// Task
+// misson 1: I've create three function, and defined some global variables, please select some variables that can make up the name of the function, and return them(Please note the uppercase and lowercase letters are different).
+// 
+// When you have finished the work, click "Run Tests" to see if your code is working properly.
+// 
+// misson 2: After misson 1 finished. you should click "Attempt" to see my three questions, and write the answer in function answer1, answer2,answer3
+// 
+// If everything is right, click "Submit" again to submit your code pass this kata.
+
+
+// 108: Welcome to the City - lvl 8
+// Description:
+// Create a method that takes as input a name, city, and state to welcome a person. Note that name will be an array consisting of one or more values that should be joined together with one space between each, and the length of the name array in test cases will vary.
+// 
+// Example:
+// 
+// ['John', 'Smith'], 'Phoenix', 'Arizona'
+// This example will return the string Hello, John Smith! Welcome to Phoenix, Arizona!
+function sayHello(name, city, state) {
+  const fullName = name.join(' ').replace(/,/g, '');
+    return `Hello, ${fullName}! Welcome to ${city}, ${state}!`;
+  }
 // 107: Exclamation marks series #1: Remove an exclamation mark from the end of string - lvl 8
 // Description:
 // Remove an exclamation mark from the end of a string. For a beginner kata, you can assume that the input data is always a string, no need to verify it.
