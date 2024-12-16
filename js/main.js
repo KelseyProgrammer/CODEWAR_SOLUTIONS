@@ -1,3 +1,26 @@
+// 116: Multiplication table - lvl 6
+// Description:
+// Your task, is to create N×N multiplication table, of size provided in parameter.
+// 
+// For example, when given size is 3:
+// 
+// 1 2 3
+// 2 4 6
+// 3 6 9
+// For the given example, the return value should be:
+// 
+// [[1,2,3],[2,4,6],[3,6,9]]
+multiplicationTable = function(size) {
+let table = [];
+  for (let r = 1; r <= size; r++){
+    let row = [];
+  for (let c = 1; c <= size; c++){
+    row.push(r * c); 
+  }
+    table.push(row);
+}
+  return table;
+};
 // 115: String cleaning - lvl 8
 // Description:
 // Your boss decided to save money by purchasing some cut-rate optical character recognition software for scanning in the text of old novels to your database. At first it seems to capture words okay, but you quickly notice that it throws in a lot of numbers at random places in the text.
