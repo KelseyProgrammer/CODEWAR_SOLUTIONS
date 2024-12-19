@@ -1,3 +1,9 @@
+// 119: Enumerable Magic - Does My List Include This? - lvl 8
+// Description:
+// Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.
+function include(arr, item){
+  return arr.includes(item);
+}
 // 118: Reversed sequence - lvl 8
 // Description:
 // Build a function that returns an array of integers from n to 1 where n>0.
