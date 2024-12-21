@@ -1,3 +1,28 @@
+// 122: Grasshopper - Messi goals function - lvl 8
+// Description:
+// Messi goals function
+// Messi is a soccer player with goals in three leagues:
+// 
+// LaLiga
+// Copa del Rey
+// Champions
+// Complete the function to return his total number of goals in all three leagues.
+// 
+// Note: the input will always be valid.
+// 
+// For example:
+// 
+// 5, 10, 2  -->  17
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+ }
+// 121: Grasshopper - Function syntax debugging - lvl 8
+// Description:
+// Grasshopper - Function syntax debugging
+// A student was working on a function and made some syntax mistakes while coding. Help them find their mistakes and fix them.
+function main (verb, noun){
+  return verb + noun
+}
 // 120: Are they the "same"? - lvl 6
 // Description:
 // Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
