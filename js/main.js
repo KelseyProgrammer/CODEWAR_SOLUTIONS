@@ -1,3 +1,15 @@
+// 124: The Wide Mouthed Frog! - lvl 8
+// Description:
+// The wide-mouth frog is particularly interested in the eating habits of other creatures.
+// 
+// He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
+// 
+// When he meets the alligator, it then makes a tiny mouth.
+// 
+// Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
+function mouthSize  (animal) {
+  return animal.toLowerCase() === "alligator" ? "small" : "wide";
+}
 // 123: Money, money, money - lvl 7
 // Description:
 // Mr. Scrooge has a sum of money 'P' that he wants to invest. Before he does, he wants to know how many years 'Y' this sum 'P' has to be kept in the bank in order for it to amount to a desired sum of money 'D'.
