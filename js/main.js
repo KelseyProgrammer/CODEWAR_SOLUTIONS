@@ -1,3 +1,10 @@
+// 132: Training JS #1: create your first JS function and print "Hello World!" - lvl 8
+// Description:
+// In JavaScript, your code is running in a function, let us step by step complete your first JS function.
+function helloWorld(str){
+  var str = "Hello World!"
+   console.log(str)
+ }
 // 131: L1: Set Alarm - lvl 8
 // Description:
 // Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
