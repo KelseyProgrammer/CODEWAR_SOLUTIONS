@@ -1,3 +1,19 @@
+// 133: Sentence Smash - lvl 8
+// Description:
+// Sentence Smash
+// Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+function smash(words) {
+  let sentence = "";
+  for (let i = 0; i < words.length; i++) {
+      sentence += words[i]; 
+      if (i < words.length - 1) {
+          sentence += " "; 
+      }
+  }
+  return sentence;
+}
+// REFACTOR:
+const smash = words => words.join(' ');
 // 132: Training JS #1: create your first JS function and print "Hello World!" - lvl 8
 // Description:
 // In JavaScript, your code is running in a function, let us step by step complete your first JS function.
