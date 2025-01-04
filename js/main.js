@@ -1,3 +1,9 @@
+// 136: String ends with? - lvl 7
+// Description:
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending){
+  return str.endsWith(ending);
+}
 // 135: Student's Final Grade- lvl 8
 // Description:
 // Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
