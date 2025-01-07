@@ -1,3 +1,14 @@
+// 138: Vowel Count - lvl 7
+// Description:
+// Return the number (count) of vowels in the given string.
+// 
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// 
+// The input string will only consist of lower case letters and/or spaces.
+function getCount(str) {
+  let vowels = "aeiou";
+  return [...str].filter(char => vowels.includes(char)).length;
+}
 // 137: Sum of Sequence - lvl 7
 // Description:
 // Your task is to write a function which returns the sum of a sequence of integers.
