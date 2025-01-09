@@ -1,3 +1,17 @@
+// 141: No oddities here - lvl 7
+// Description:
+// Write a small function that returns the values of an array that are not odd.
+// 
+// All values in the array will be integers. Return the good values in the order they are given.
+function noOdds( values ){
+  let even = [];
+  for (let i = 0; i <= values.length - 1; i++){
+    if (values[i] % 2 === 0){
+      even.push(values[i]);
+    }
+  }
+  return even;
+}
 // 140: Sort array by string length - lvl 7
 // Description:
 // Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
