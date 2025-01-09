@@ -12,7 +12,6 @@
 function sortByLength(array){
   let sorted = array.sort((a,b)=> a.length - b.length);
   return sorted;
-
 }
 // 139: L1: Bartender, drinks! - lvl 8
 // Description:
