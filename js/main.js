@@ -1,3 +1,19 @@
+// 140: Sort array by string length - lvl 7
+// Description:
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+// 
+// For example, if this array were passed as an argument:
+// 
+// ["Telescopes", "Glasses", "Eyes", "Monocles"]
+// Your function would return the following array:
+// 
+// ["Eyes", "Glasses", "Monocles", "Telescopes"]
+// All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+function sortByLength(array){
+  let sorted = array.sort((a,b)=> a.length - b.length);
+  return sorted;
+
+}
 // 139: L1: Bartender, drinks! - lvl 8
 // Description:
 // Complete the function that receives as input a string, and produces outputs according to the following table:
