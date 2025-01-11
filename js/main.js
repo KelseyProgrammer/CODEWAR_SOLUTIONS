@@ -1,3 +1,10 @@
+// 142: Surface Area and Volume of a Box - lvl 8
+// Write a function that returns the total surface area and volume of a box as an array: [area, volume]
+function getSize(width, height, depth) {
+  let area = 2 * (depth * width + width * height + height * depth);
+  let volume = depth * width * height;
+  return [area, volume];
+}
 // 141: No oddities here - lvl 7
 // Description:
 // Write a small function that returns the values of an array that are not odd.
