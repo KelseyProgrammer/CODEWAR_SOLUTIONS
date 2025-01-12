@@ -1,3 +1,29 @@
+// 144: Remove First and Last Character Part Two - lvl 8
+// Remove First and Last Character Part Two
+// 31612188% of 2,62816,861 of 25,551Steadyx
+// JavaScript
+// Train AgainNext Kata
+// Details
+// Solutions
+// Forks (8)
+// Discourse (122)
+// Translations
+// Fork|Collect|
+// Description:
+// This is a spin off of my first kata.
+// 
+// You are given a string containing a sequence of character sequences separated by commas.
+// 
+// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+// 
+// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+const array = string => 
+  string.split(',').length <= 2 
+    ? null 
+    : string
+        .split(',')
+        .slice(1, -1)
+        .join(' ');
 // 143 : Hello Name Or World - lvl 8
 // Description:
 // Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
