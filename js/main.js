@@ -1,3 +1,29 @@
+// 153: Exclamation marks series #4: Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string - lvl 8
+// Description:
+// Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string. For a beginner kata, you can assume that the input data is always a non empty string, no need to verify it.
+// 
+// Examples
+// "Hi!"     ---> "Hi!"
+// "Hi!!!"   ---> "Hi!"
+// "!Hi"     ---> "Hi!"
+// "!Hi!"    ---> "Hi!"
+// "Hi! Hi!" ---> "Hi Hi!"
+// "Hi"      ---> "Hi!"
+function remove (string) {
+  string = string.replace(/!/g, '')
+   string += '!';  
+   return string;
+ }
+//  REFACTOR:
+const remove = string =>
+  string.replace(/!/g, '')+ '!';
+// 152: Grasshopper - Combine strings - lvl 8
+// Description:
+// Combine strings function
+// Create a function named combineNames/combine_names/CombineNames that accepts two parameters (first and last name). The function should return the full name.
+function combineNames (first, last) {
+  return `${first} ${last}`
+}
 //151: Contamination #1 -String-
 // Description:
 // An AI has infected a text with a character!!
@@ -10,7 +36,18 @@
 // There will never be a case when both are empty as nothing is going on!!
 // 
 // Note: The character is a string of length 1 or an empty string. 
+function contamination(text, char) {
+  if (text === "" || char === "") {
+    return "";
+  }
 
+  let fixed = "";
+  for (let i = 0; i < text.length; i++) {
+    fixed += char; 
+  }
+
+  return fixed;
+}
 // 150: Counting Duplicates - lvl 6
 // Count the number of Duplicates
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
