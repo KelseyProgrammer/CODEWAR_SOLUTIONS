@@ -1,3 +1,16 @@
+//151: Contamination #1 -String-
+// Description:
+// An AI has infected a text with a character!!
+// 
+// This text is now fully mutated to this character.
+// 
+// Starting with the original text, and given a character, return the text once it has been mutated so that all of the characters in the original text have been replaced with the character.
+// 
+// If the text or the character are empty, return an empty string.
+// There will never be a case when both are empty as nothing is going on!!
+// 
+// Note: The character is a string of length 1 or an empty string. 
+
 // 150: Counting Duplicates - lvl 6
 // Count the number of Duplicates
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
