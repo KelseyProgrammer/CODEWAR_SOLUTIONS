@@ -1,7 +1,21 @@
+// 154: If you can't sleep, just count sheep!!- lvl 8
+// Description:
+// If you can't sleep, just count sheeps!!
+// 
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+var countSheep = function (num){
+  let result = ''
+  let i = 1
+  while (i <= num){
+    result += `${i} sheep...`
+    i++;
+  }
+  return result;
+}
 // 153: Exclamation marks series #4: Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string - lvl 8
 // Description:
 // Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string. For a beginner kata, you can assume that the input data is always a non empty string, no need to verify it.
-// 
 // Examples
 // "Hi!"     ---> "Hi!"
 // "Hi!!!"   ---> "Hi!"
