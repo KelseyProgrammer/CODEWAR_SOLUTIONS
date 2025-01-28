@@ -1,3 +1,15 @@
+// 160; Do you speak "English"? - lvl 8
+// Description:
+// Given a string of arbitrary length with any ascii characters. Write a function to determine whether the string contains the whole word "English".
+// 
+// The order of characters is important -- a string "abcEnglishdef" is correct but "abcnEglishsef" is not correct.
+// 
+// Upper or lower case letter does not matter -- "eNglisH" is also correct.
+// 
+// Return value as boolean values, true for the string to contains "English", false for it does not.
+function spEng(sentence){
+  return sentence.toLowerCase().includes("english");
+ }
 // 159: Holiday VIII - Duty Free - lvl 8
 // The purpose of this kata is to work out just how many bottles of duty free whiskey you would have to buy such that the savings over the normal high street price would effectively cover the cost of your holiday.
 // 
