@@ -1,3 +1,16 @@
+// 164: Printing Array elements with Comma delimiters - lvl 8
+// Input: Array of elements
+
+// ["h","o","l","a"]
+
+// Output: String with comma delimited elements of the array in th same order.
+
+// "h,o,l,a"
+
+// Note: if this seems too simple for you try the next levelNote2: the input data can be: boolean array, array of objects, array of string arrays, array of number arrays... 😕
+function printArray(array){
+  return array.join(',');
+ }
 // 163: Convert a string to an array - lvl 8
 // Description:
 // Write a function to split a string and convert it into an array of words.
