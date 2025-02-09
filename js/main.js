@@ -1,3 +1,23 @@
+// 169: Write Number in Expanded Form - lvl 6
+// Description:
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+// 45 --> "40 + 5"
+// 12 --> "10 + 2"
+// NOTE: All numbers will be whole numbers greater than 0.
+// 70304 --> "70000 + 300 + 4"
+function expandedForm(num) {
+  const numStr = String(num);
+  const digits = numStr.split('');
+  const result = [];
+
+  for (let i = 0; i < digits.length; i++) {
+    if (digits[i] !== '0') {
+      const placeValue = Math.pow(10, digits.length - 1 - i);
+      result.push(digits[i] * placeValue);
+    }
+  }
+  return result.join(' + ');
+}
 // 168: Fundamentals: Return - lvl 8
 // Description:
 // Make multiple functions that will return the sum, difference, modulus, product, quotient, and the exponent respectively.
