@@ -1,3 +1,27 @@
+// 171: Find the Product - lvl 7
+// 
+// Description:
+// We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
+// 
+// So given a string "super", we should return a list of [2, 4].
+// Mmmm  => []
+// Some examples:
+// Apple => [1,5]
+// Super => [2,4]
+// NOTES
+// YoMama -> [1,2,4,6]
+// This is indexed from [1..n] (not zero indexed!)
+// Vowels in this context refers to: a e i o u y (including upper case)
+function vowelIndices(word) {
+  let indexes = [];
+  let vowels = "aAeEiIoOuUyY";
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      indexes.push(i + 1); 
+    }
+  }
+  return indexes;
+}
 // 170: Maximum Product - lvl 7
 // Description:
 // Task
