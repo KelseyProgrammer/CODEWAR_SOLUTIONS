@@ -1,3 +1,13 @@
+// 173: Formatting decimal places #0 - lvl 8
+// Description:
+// Each number should be formatted that it is rounded to two decimal places. You don't need to check whether the input is a valid number because only valid numbers are used in the tests.
+// 
+// Example:    
+// 5.5589 is rounded 5.56   
+// -3.3424 is rounded -3.34
+function twoDecimalPlaces(n) {
+  return Math.round(n * 100) /100;
+}
 // 172: Exes and Ohs - lvl 7
 // Description:
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
