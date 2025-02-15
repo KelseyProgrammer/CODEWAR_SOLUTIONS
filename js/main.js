@@ -1,3 +1,12 @@
+// 175: The 'if' function - lvl 8
+// Description:
+// Create a function called _if which takes 3 arguments: a value bool and 2 functions (which do not take any parameters): func1 and func2
+// When bool is truthy, func1 should be called, otherwise call the func2.Example:
+// Logs 'True' to the console.
+// _if(true, function(){console.log("True")}, function(){console.log("false")})
+function _if(bool, func1, func2) {
+  return bool ? func1() : func2();
+  }
 // 174: How old will I be in 2099? - lvl 8
 // Description:
 // Philip's just turned four and he wants to know how old he will be in various years in the future such as 2090 or 3044. His parents can't keep up calculating this so they've begged you to help them out by writing a programme that can answer Philip's endless questions.
