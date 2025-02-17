@@ -1,3 +1,10 @@
+// 178: Remove exclamation marks - lvl 8
+// Description:
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+function removeExclamationMarks(s) {
+  return s.replace(/!/gi, '');
+}
+
 // 177: Simple validation of a username with regex - lvl 8
 // Description:
 // Write a simple regex to validate a username. Allowed characters are:
@@ -6,7 +13,10 @@
 // numbers,
 // underscore
 // Length should be between 4 and 16 characters (both included).
-
+function validateUsr(username) {
+  const res =  /^[a-z0-9_]{4,16}$/
+  return res.test(username);
+}
 // 176: Determine offspring sex based on genes XX and XY chromosomes - lvl 8
 // 
 // Description:
