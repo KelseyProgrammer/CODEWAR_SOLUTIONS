@@ -1,10 +1,38 @@
+// 179: Exclamation marks series #6: Remove n exclamation marks in the sentence from left to right - lvl 8
+// 
+// Description:
+// Remove n exclamation marks in the sentence from left to right. n is positive integer.
+// remove("Hi!",1) === "Hi"
+// Examples
+// remove("Hi!!!",1) === "Hi!!"
+// remove("Hi!",100) === "Hi"
+// remove("!Hi",1) === "Hi"
+// remove("Hi!!!",100) === "Hi"
+// remove("!Hi!",100) === "Hi"
+// remove("!Hi!",1) === "Hi!"
+// remove("!!!Hi !!hi!!! !hi",3) === "Hi !!hi!!! !hi"
+// remove("!!!Hi !!hi!!! !hi",1) === "!!Hi !!hi!!! !hi"
+// remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
+// remove("!!!Hi !!hi!!! !hi",5) === "Hi hi!!! !hi"
+function remove(s,n){
+  let count = 0;
+   return s
+   .split('')
+   .map(char => {
+     if (char === '!' && count < n){
+       count ++;
+       return '';
+     }
+     return char;
+   })
+   .join('');
+ }
 // 178: Remove exclamation marks - lvl 8
 // Description:
 // Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
 function removeExclamationMarks(s) {
   return s.replace(/!/gi, '');
 }
-
 // 177: Simple validation of a username with regex - lvl 8
 // Description:
 // Write a simple regex to validate a username. Allowed characters are:
