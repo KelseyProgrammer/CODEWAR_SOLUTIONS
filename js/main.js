@@ -1,3 +1,16 @@
+// 180: Regex validate PIN code - lvl 7
+// Description:
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+// 
+// If the function is passed a valid PIN string, return true, else return false.
+// 
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin)
+}
 // 179: Exclamation marks series #6: Remove n exclamation marks in the sentence from left to right - lvl 8
 // 
 // Description:
