@@ -1,7 +1,19 @@
+// 182: Largest pair sum in array - lvl 7
+// Description:
+// Given a sequence of numbers, find the largest pair sum in the sequence.
+// 
+// For example
+// 
+// [10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+// [99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+// Input sequence contains minimum two elements and every element is an integer.
+function largestPairSum (numbers) {
+  numbers.sort((a,b)=> b - a)
+  return numbers[0] + numbers[1]; 
+}
 // 181: Small enough? - Beginner - lvl 7
 // Description:
 // You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
-// 
 // You can assume all values in the array are numbers.
 function smallEnough(a, limit){
   for (let i = 0; i < a.length; i++){
