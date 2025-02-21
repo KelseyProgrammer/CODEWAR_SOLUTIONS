@@ -1,3 +1,20 @@
+// 181: Small enough? - Beginner - lvl 7
+// Description:
+// You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+// 
+// You can assume all values in the array are numbers.
+function smallEnough(a, limit){
+  for (let i = 0; i < a.length; i++){
+    if (a[i] > limit){
+      return false;
+  }
+}
+     return true;
+    }
+    // REFACTOR:
+    function smallEnough(a, limit){
+  return Math.max(...a) <= limit
+}
 // 180: Regex validate PIN code - lvl 7
 // Description:
 // ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
