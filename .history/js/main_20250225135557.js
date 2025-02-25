@@ -16,9 +16,7 @@
 // 0 <= s <= 59
 // Fundamentals
 // Suggest kata description edits
-function past(h, m, s){
-  return ((h*3600)+(m*60)+s)*1000;
-}
+
 // 183: Who ate the cookie? - lvl 8
 // Description:
 // For this problem you must create a program that says who ate the last cookie. If the input is a string then "Zach" ate the cookie. If the input is a float or an int then "Monica" ate the cookie. If the input is anything else "the dog" ate the cookie. The way to return the statement is: "Who ate the last cookie? It was (name)!"

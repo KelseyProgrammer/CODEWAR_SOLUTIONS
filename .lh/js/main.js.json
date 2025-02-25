@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -12,6 +12,14 @@
                 {
                     "date": 1740418301174,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,26 @@\n // \n // Note: Make sure you return the correct message with correct spaces and punctuation.\n // \n // Please leave feedback for this kata. Cheers!\n-\n+function cookie(x){\n+  if(typeof x === \"string\"){\n+    x = 'Zach';\n+  }\n+    else if (typeof x === \"number\"){\n+      x = 'Monica';\n+    }\n+    else{\n+      x = 'the dog';\n+    }\n+    return `Who ate the last cookie? It was ${x}!`;\n+    }\n+    // REFACTOR:\n+    function cookie(x) {\n+      var t = typeof x\n+      var who = t==\"string\" ? 'Zach' : t==\"number\" ? 'Monica' : 'the dog'\n+      return `Who ate the last cookie? It was ${who}!`\n+    }\n // 182: Largest pair sum in array - lvl 7\n // Description:\n // Given a sequence of numbers, find the largest pair sum in the sequence.\n // \n"
+                },
+                {
+                    "date": 1740509757408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,23 @@\n+// 184: Beginner Series #2 Clock - lvl 8\n+// Clock shows h hours, m minutes and s seconds after midnight.\n+// \n+// Your task is to write a function which returns the time since midnight in milliseconds.\n+// \n+// Example:\n+// h = 0\n+// m = 1\n+// s = 1\n+// \n+// result = 61000\n+// Input constraints:\n+// \n+// 0 <= h <= 23\n+// 0 <= m <= 59\n+// 0 <= s <= 59\n+// Fundamentals\n+// Suggest kata description edits\n+\n // 183: Who ate the cookie? - lvl 8\n // Description:\n // For this problem you must create a program that says who ate the last cookie. If the input is a string then \"Zach\" ate the cookie. If the input is a float or an int then \"Monica\" ate the cookie. If the input is anything else \"the dog\" ate the cookie. The way to return the statement is: \"Who ate the last cookie? It was (name)!\"\n // \n"
+                },
+                {
+                    "date": 1740509772460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,11 @@\n // 0 <= m <= 59\n // 0 <= s <= 59\n // Fundamentals\n // Suggest kata description edits\n-\n+function past(h, m, s){\n+  return ((h*3600)+(m*60)+s)*1000;\n+}\n // 183: Who ate the cookie? - lvl 8\n // Description:\n // For this problem you must create a program that says who ate the last cookie. If the input is a string then \"Zach\" ate the cookie. If the input is a float or an int then \"Monica\" ate the cookie. If the input is anything else \"the dog\" ate the cookie. The way to return the statement is: \"Who ate the last cookie? It was (name)!\"\n // \n"
                 }
             ],
             "date": 1740418149625,
