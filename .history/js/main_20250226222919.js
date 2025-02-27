@@ -5,17 +5,7 @@
 // 
 // FundamentalsStrings
 // Suggest kata description edits
-function bump(x){
-  let count = 0;
-  for (let i = 0; i < x.length; i++){
-    if (x[i] === 'n'){
-      count++
-    }
-  }
-  return count <= 15 ? "Woohoo!": "Car Dead"
-}
-// REFACTOR:
-const bump=x=>x.split('n').length>16?"Car Dead":"Woohoo!";
+
 // 184: Beginner Series #2 Clock - lvl 8
 // Clock shows h hours, m minutes and s seconds after midnight.
 // 

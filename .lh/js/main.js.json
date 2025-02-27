@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -20,6 +20,14 @@
                 {
                     "date": 1740509772460,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,11 @@\n // 0 <= m <= 59\n // 0 <= s <= 59\n // Fundamentals\n // Suggest kata description edits\n-\n+function past(h, m, s){\n+  return ((h*3600)+(m*60)+s)*1000;\n+}\n // 183: Who ate the cookie? - lvl 8\n // Description:\n // For this problem you must create a program that says who ate the last cookie. If the input is a string then \"Zach\" ate the cookie. If the input is a float or an int then \"Monica\" ate the cookie. If the input is anything else \"the dog\" ate the cookie. The way to return the statement is: \"Who ate the last cookie? It was (name)!\"\n // \n"
+                },
+                {
+                    "date": 1740626959887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n+// 185: Bumps in the Road - lvl 7\n+// Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.\n+// \n+// Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead\n+// \n+// FundamentalsStrings\n+// Suggest kata description edits\n+\n // 184: Beginner Series #2 Clock - lvl 8\n // Clock shows h hours, m minutes and s seconds after midnight.\n // \n // Your task is to write a function which returns the time since midnight in milliseconds.\n"
+                },
+                {
+                    "date": 1740627009854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,19 @@\n // Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead\n // \n // FundamentalsStrings\n // Suggest kata description edits\n-\n+function bump(x){\n+  let count = 0;\n+  for (let i = 0; i < x.length; i++){\n+    if (x[i] === 'n'){\n+      count++\n+    }\n+  }\n+  return count <= 15 ? \"Woohoo!\": \"Car Dead\"\n+}\n+// REFACTOR:\n+const bump=x=>x.split('n').length>16?\"Car Dead\":\"Woohoo!\";\n // 184: Beginner Series #2 Clock - lvl 8\n // Clock shows h hours, m minutes and s seconds after midnight.\n // \n // Your task is to write a function which returns the time since midnight in milliseconds.\n"
                 }
             ],
             "date": 1740418149625,
