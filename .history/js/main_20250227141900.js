@@ -13,11 +13,7 @@
 // Indexed capitalization
 // 
 // Even-odd disparity
-function capitalize(s){
-  const odd = s.split("").map((l, i) => i % 2 !== 0 ? l.toUpperCase() : l).join("");
-  const even = s.split("").map((l, i) => i % 2 === 0 ? l.toUpperCase() : l).join("");
-  return [even, odd];
-};
+
 // 185: Bumps in the Road - lvl 7
 // Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
 // 
