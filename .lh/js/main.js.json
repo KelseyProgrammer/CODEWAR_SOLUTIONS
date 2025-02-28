@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -36,6 +36,14 @@
                 {
                     "date": 1740683954071,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,13 @@\n // \n // Indexed capitalization\n // \n // Even-odd disparity\n-\n+function capitalize(s){\n+  const odd = s.split(\"\").map((l, i) => i % 2 !== 0 ? l.toUpperCase() : l).join(\"\");\n+  const even = s.split(\"\").map((l, i) => i % 2 === 0 ? l.toUpperCase() : l).join(\"\");\n+  return [even, odd];\n+};\n // 185: Bumps in the Road - lvl 7\n // Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.\n // \n // Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead\n"
+                },
+                {
+                    "date": 1740787069990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,10 @@\n+// 187: Maximum Product - lvl 7\n+// Description:\n+// Task\n+// Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.\n+\n+\n // 186: Alternate capitalization - lvl 7\n // Description:\n // Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.\n // \n"
+                },
+                {
+                    "date": 1740787086295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n // 187: Maximum Product - lvl 7\n // Description:\n // Task\n // Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.\n-\n-\n+function adjacentElementsProduct(array) {\n+  let newArray = [];\n+  for (let i = 0; i < array.length - 1; i++){\n+    newArray.push(array[i] * array[i + 1])\n+  }\n+  return Math.max(...newArray);\n+}\n // 186: Alternate capitalization - lvl 7\n // Description:\n // Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.\n // \n"
                 }
             ],
             "date": 1740418149625,
