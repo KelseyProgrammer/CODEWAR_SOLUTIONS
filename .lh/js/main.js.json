@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -44,6 +44,14 @@
                 {
                     "date": 1740787086295,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n // 187: Maximum Product - lvl 7\n // Description:\n // Task\n // Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.\n-\n-\n+function adjacentElementsProduct(array) {\n+  let newArray = [];\n+  for (let i = 0; i < array.length - 1; i++){\n+    newArray.push(array[i] * array[i + 1])\n+  }\n+  return Math.max(...newArray);\n+}\n // 186: Alternate capitalization - lvl 7\n // Description:\n // Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.\n // \n"
+                },
+                {
+                    "date": 1740968895905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 188: Nth Smallest Element (Array Series #4) - lvl 7\n+// \n+// Description:\n+// Introduction and warm-up (highly recommended): Playing With Lists/Arrays Series\n+// \n+// Task\n+// Given an array/list of integers, find the Nth smallest element in the array.\n+// Array/list size is at least 3.\n+// Notes\n+// Repetition in array/list's numbers could occur, so don't remove duplications.\n+// Array/list's numbers could be a mixture of positives , negatives and zeros.\n+\n // 187: Maximum Product - lvl 7\n // Description:\n // Task\n // Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.\n"
+                },
+                {
+                    "date": 1740968918060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,12 @@\n // Array/list size is at least 3.\n // Notes\n // Repetition in array/list's numbers could occur, so don't remove duplications.\n // Array/list's numbers could be a mixture of positives , negatives and zeros.\n-\n+function nthSmallest(arr, pos){\n+  arr.sort((a,b)=> a - b)\n+   return arr[pos - 1];\n+ }\n // 187: Maximum Product - lvl 7\n // Description:\n // Task\n // Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.\n"
                 }
             ],
             "date": 1740418149625,

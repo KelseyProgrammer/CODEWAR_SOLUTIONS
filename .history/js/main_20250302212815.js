@@ -9,10 +9,7 @@
 // Notes
 // Repetition in array/list's numbers could occur, so don't remove duplications.
 // Array/list's numbers could be a mixture of positives , negatives and zeros.
-function nthSmallest(arr, pos){
-  arr.sort((a,b)=> a - b)
-   return arr[pos - 1];
- }
+
 // 187: Maximum Product - lvl 7
 // Description:
 // Task
