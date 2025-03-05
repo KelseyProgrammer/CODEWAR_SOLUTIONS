@@ -49,18 +49,7 @@
 // 3 is greater than the sum all the elements to its right side
 // 
 // Note : The last element 2 is greater than the sum of its right elements (abstract zero).
-function arrayLeaders(numbers){
-  let leaders = [];
-   
-   for (let i = 0; i < numbers.length; i++){
-    let rightSum = numbers.slice(i + 1)
-    .reduce((a, b) => a + b, 0);
-     if (numbers[i] > rightSum){
-      leaders.push(numbers[i]);
-     }
-   }
-   return leaders;
- }
+
 // 189: Product Of Maximums Of Array (Array Series #2) - lvl 7
 // Description:
 // Introduction and Warm-up (Highly recommended)
