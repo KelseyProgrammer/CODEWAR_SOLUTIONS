@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -68,6 +68,10 @@
                 {
                     "date": 1741196470106,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,20 @@\n // \n // 3 is greater than the sum all the elements to its right side\n // \n // Note : The last element 2 is greater than the sum of its right elements (abstract zero).\n-\n+function arrayLeaders(numbers){\n+  let leaders = [];\n+   \n+   for (let i = 0; i < numbers.length; i++){\n+    let rightSum = numbers.slice(i + 1)\n+    .reduce((a, b) => a + b, 0);\n+     if (numbers[i] > rightSum){\n+      leaders.push(numbers[i]);\n+     }\n+   }\n+   return leaders;\n+ }\n // 189: Product Of Maximums Of Array (Array Series #2) - lvl 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
+                },
+                {
+                    "date": 1741286805581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,29 @@\n+// 191: Maximum Gap (Array Series #4) - LVL 7\n+// Description:\n+// Introduction and Warm-up (Highly recommended)\n+// Playing With Lists/Arrays Series\n+// Task\n+// Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.\n+// \n+// Notes\n+// Array/list size is at least 3 .\n+// \n+// Array/list's numbers Will be mixture of positives and negatives also zeros_\n+// \n+// Repetition of numbers in the array/list could occur.\n+// \n+// The Maximum Gap is computed Regardless the sign.\n+function maxGap (numbers){\n+  numbers.sort((a, b)=> a - b);\n+  \n+  let differences = [];\n+  \n+  for (let i = 1; i < numbers.length; i++){\n+    differences.push(numbers[i] - numbers[i - 1]) \n+  }\n+  return Math.max(...differences);;\n+}\n // 190: Array Leaders (Array Series #3) - lvl 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
                 }
             ],
             "date": 1740418149625,
