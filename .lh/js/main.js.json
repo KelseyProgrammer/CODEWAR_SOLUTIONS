@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -80,6 +80,10 @@
                 {
                     "date": 1741397320769,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,21 @@\n // Threshold K will always be reachable.\n // \n // Input >> Output Examples\n // minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)\n-\n+function minimumSteps(numbers, value){\n+ numbers.sort((a, b)=> a - b);\n+  let sum = 0;\n+  let steps = 0;\n+  \n+  for (let i = 0; i < numbers.length; i++){\n+    sum += numbers[i];\n+  if (sum >= value)return steps;\n+    steps++;\n+  }\n+  \n+  return steps;\n+  }\n // 191: Maximum Gap (Array Series #4) - LVL 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
+                },
+                {
+                    "date": 1741456567194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,50 @@\n+// 193: Transform To Prime - lvl 6\n+// Description:\n+// Task\n+// Given a list of positive integers, determine the minimum non-negative integer that needs to be inserted so that the sum of all elements becomes a prime number.\n+// \n+// Notes\n+// The list will always have at least 2 elements.\n+// All elements will be positive integers (n > 0).\n+// The list may contain duplicate values.\n+// The new sum must be the closest prime number that is greater than or equal to the current sum.\n+// Examples\n+// [3, 1, 2] ==> Should return 1  \n+// Explanation: The sum is 6\n+// The closest prime greater than or equal to 6 is 7\n+// We need to add 1 to make the sum 7 (a prime)\n+// \n+// [2, 12, 8, 4, 6] ==> Should return 5  \n+// Explanation: The sum is 32\n+// The closest prime greater than or equal to 32 is 37\n+// We need to add 5 to make the sum 37 (a prime)\n+// \n+// [50, 39, 49, 6, 17, 28] ==> Should return 2  \n+// Explanation: The sum is 189\n+// The closest prime greater than or equal to 189 is 191\n+// We need to add 2 to make the sum 191 (a prime)\n+function minimumNumber(numbers) {\n+  \n+  let sum = numbers.reduce((a, b) => a + b, 0);\n+  \n+  \n+  function isPrime(n) {\n+    if (n < 2) return false;\n+    for (let i = 2; i * i <= n; i++) {\n+      if (n % i === 0) return false;\n+    }\n+    return true;\n+  }\n+\n+\n+  let increment = 0;\n+  while (!isPrime(sum + increment)) {\n+    increment++;\n+  }\n+\n+  return increment;\n+}\n // 192: Minimum Steps (Array Series #6) - lvl 7\n // Task\n // Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array until their Sum becomes greater or equal to K.\n // \n"
                 }
             ],
             "date": 1740418149625,
