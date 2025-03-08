@@ -13,19 +13,7 @@
 // 
 // Input >> Output Examples
 // minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)
-function minimumSteps(numbers, value){
- numbers.sort((a, b)=> a - b);
-  let sum = 0;
-  let steps = 0;
-  
-  for (let i = 0; i < numbers.length; i++){
-    sum += numbers[i];
-  if (sum >= value)return steps;
-    steps++;
-  }
-  
-  return steps;
-  }
+
 // 191: Maximum Gap (Array Series #4) - LVL 7
 // Description:
 // Introduction and Warm-up (Highly recommended)

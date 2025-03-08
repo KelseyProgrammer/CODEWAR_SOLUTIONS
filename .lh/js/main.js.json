@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -72,6 +72,14 @@
                 {
                     "date": 1741286805581,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,29 @@\n+// 191: Maximum Gap (Array Series #4) - LVL 7\n+// Description:\n+// Introduction and Warm-up (Highly recommended)\n+// Playing With Lists/Arrays Series\n+// Task\n+// Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.\n+// \n+// Notes\n+// Array/list size is at least 3 .\n+// \n+// Array/list's numbers Will be mixture of positives and negatives also zeros_\n+// \n+// Repetition of numbers in the array/list could occur.\n+// \n+// The Maximum Gap is computed Regardless the sign.\n+function maxGap (numbers){\n+  numbers.sort((a, b)=> a - b);\n+  \n+  let differences = [];\n+  \n+  for (let i = 1; i < numbers.length; i++){\n+    differences.push(numbers[i] - numbers[i - 1]) \n+  }\n+  return Math.max(...differences);;\n+}\n // 190: Array Leaders (Array Series #3) - lvl 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
+                },
+                {
+                    "date": 1741397256451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,20 @@\n+// 192: Minimum Steps (Array Series #6) - lvl 7\n+// Task\n+// Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array until their Sum becomes greater or equal to K.\n+// \n+// Notes:\n+// List size is at least 3.\n+// \n+// All numbers will be positive.\n+// \n+// Numbers could occur more than once , (Duplications may exist).\n+// \n+// Threshold K will always be reachable.\n+// \n+// Input >> Output Examples\n+// minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)\n+\n // 191: Maximum Gap (Array Series #4) - LVL 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
+                },
+                {
+                    "date": 1741397320769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,21 @@\n // Threshold K will always be reachable.\n // \n // Input >> Output Examples\n // minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)\n-\n+function minimumSteps(numbers, value){\n+ numbers.sort((a, b)=> a - b);\n+  let sum = 0;\n+  let steps = 0;\n+  \n+  for (let i = 0; i < numbers.length; i++){\n+    sum += numbers[i];\n+  if (sum >= value)return steps;\n+    steps++;\n+  }\n+  \n+  return steps;\n+  }\n // 191: Maximum Gap (Array Series #4) - LVL 7\n // Description:\n // Introduction and Warm-up (Highly recommended)\n // Playing With Lists/Arrays Series\n"
                 }
             ],
             "date": 1740418149625,
