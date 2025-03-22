@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -96,6 +96,10 @@
                 {
                     "date": 1742529112992,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 197: Add Length - lvl 8\n+// Description:\n+// What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?\n+// \n+// Example(Input --> Output)\n+// \"apple ban\" --> [\"apple 5\", \"ban 3\"]\n+// \"you will win\" --> [\"you 3\", \"will 4\", \"win 3\"]\n+function addLength(str) {\n+ const words = str.split(' ');\n+  const result = words.map(word => `${word} ${word.length}`);\n+  return result;\n+}\n // 196: Sum of Multiples - lvl 8\n // Description:\n // Your Job\n // Find the sum of all multiples of n below m\n"
+                },
+                {
+                    "date": 1742609162462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,17 @@\n+// 198:Convert an array of strings to array of numbers - lvl 7\n+// Description:\n+// Oh no!\n+// Some really funny web dev gave you a sequence of numbers from his API response as an sequence of strings!\n+// \n+// You need to cast the whole array to the correct type.\n+// \n+// Create the function that takes as a parameter a sequence of numbers represented as strings and outputs a sequence of numbers.\n+// \n+// ie:[\"1\", \"2\", \"3\"] to [1, 2, 3]Note that you can receive floats as well.\n+function toNumberArray(stringarray){\n+  return stringarray.map(Number);\n+}\n // 197: Add Length - lvl 8\n // Description:\n // What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?\n // \n"
                 }
             ],
             "date": 1740418149625,
