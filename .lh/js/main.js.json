@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 25,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -108,6 +108,10 @@
                 {
                     "date": 1742848411325,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,34 @@\n+// 200: Maximum Length Difference - lvl 7\n+// Description:\n+// You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.\n+// \n+// Find max(abs(length(x) − length(y)))\n+// \n+// If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).\n+// \n+// Example:\n+// a1 = [\"hoqq\", \"bbllkw\", \"oox\", \"ejjuyyy\", \"plmiis\", \"xxxzgpsssa\", \"xxwwkktt\", \"znnnnfqknaz\", \"qqquuhii\", \"dvvvwz\"]\n+// a2 = [\"cccooommaaqqoxii\", \"gggqaffhhh\", \"tttoowwwmmww\"]\n+// mxdiflg(a1, a2) --> 13\n+// Bash note:\n+// input : 2 strings with substrings separated by ,\n+// output: number as a string\n+function mxdiflg(a1, a2) {\n+  if (a1.length === 0 || a2.length === 0) {\n+      return -1;\n+  }\n+  const lenA1 = a1.map(str => str.length);\n+  const lenA2 = a2.map(str => str.length);\n+  const maxA1 = Math.max(...lenA1);\n+  const minA1 = Math.min(...lenA1);\n+  const maxA2 = Math.max(...lenA2);\n+  const minA2 = Math.min(...lenA2);\n+  return Math.max(\n+      Math.abs(maxA1 - minA2),\n+      Math.abs(minA1 - maxA2)\n+  );\n+}\n // 199: Sleigh Authentication - lvl 8\n // Description:\n // Christmas is coming and many people dreamed of having a ride with Santa's sleigh. But, of course, only Santa himself is allowed to use this wonderful transportation. And in order to make sure, that only he can board the sleigh, there's an authentication mechanism.\n // \n"
+                },
+                {
+                    "date": 1742946761014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+// 201 : Greet Me - lvl 7\n+// Description:\n+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.\n+// \n+// Example:\n+// \"riley\" --> \"Hello Riley!\"\n+// \"JACK\"  --> \"Hello Jack!\"\n+function greet(name){\n+  return `Hello ${name.charAt(0).toUpperCase() + name.slice(1)}!`;\n+}\n // 200: Maximum Length Difference - lvl 7\n // Description:\n // You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.\n // \n"
                 }
             ],
             "date": 1740418149625,
