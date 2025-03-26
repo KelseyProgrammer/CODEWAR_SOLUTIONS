@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -112,6 +112,14 @@
                 {
                     "date": 1742946761014,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+// 201 : Greet Me - lvl 7\n+// Description:\n+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.\n+// \n+// Example:\n+// \"riley\" --> \"Hello Riley!\"\n+// \"JACK\"  --> \"Hello Jack!\"\n+function greet(name){\n+  return `Hello ${name.charAt(0).toUpperCase() + name.slice(1)}!`;\n+}\n // 200: Maximum Length Difference - lvl 7\n // Description:\n // You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.\n // \n"
+                },
+                {
+                    "date": 1743027092073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 202: Deodorant Evaporator - lvl 7  \n+// Description:\n+// This program tests the life of an evaporator containing a gas.\n+// \n+// We know the content of the evaporator (content in ml), the percentage of foam or gas lost every day (evap_per_day) and the threshold (threshold) in percentage beyond which the evaporator is no longer useful. All numbers are strictly positive.\n+// \n+// The program reports the nth day (as an integer) on which the evaporator will be out of use.\n+// evaporator(10, 10, 5) -> 29\n+// Example:\n+// Content is in fact not necessary in the body of the function \"evaporator\", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.\n+// Note:\n+\n // 201 : Greet Me - lvl 7\n // Description:\n // Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.\n // \n"
+                },
+                {
+                    "date": 1743027115170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,21 @@\n // evaporator(10, 10, 5) -> 29\n // Example:\n // Content is in fact not necessary in the body of the function \"evaporator\", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.\n // Note:\n-\n+function evaporator(content, evap_per_day, threshold) {\n+  let days = 0;\n+  let percentage = 100;\n+  \n+  threshold = threshold / 100;\n+  \n+  while (percentage / 100 > threshold) {\n+      percentage -= percentage * (evap_per_day / 100);\n+      days++;\n+  }\n+  \n+  return days;\n+}\n // 201 : Greet Me - lvl 7\n // Description:\n // Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.\n // \n"
                 }
             ],
             "date": 1740418149625,

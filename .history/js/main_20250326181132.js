@@ -1,3 +1,470 @@
+// 202: Deodorant Evaporator - lvl 7  
+// Description:
+// This program tests the life of an evaporator containing a gas.
+// 
+// We know the content of the evaporator (content in ml), the percentage of foam or gas lost every day (evap_per_day) and the threshold (threshold) in percentage beyond which the evaporator is no longer useful. All numbers are strictly positive.
+// 
+// The program reports the nth day (as an integer) on which the evaporator will be out of use.
+// evaporator(10, 10, 5) -> 29
+// Example:
+// Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
+// Note:
+
+// 201 : Greet Me - lvl 7
+// Description:
+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+// 
+// Example:
+// "riley" --> "Hello Riley!"
+// "JACK"  --> "Hello Jack!"
+function greet(name){
+  return `Hello ${name.charAt(0).toUpperCase() + name.slice(1)}!`;
+}
+// 200: Maximum Length Difference - lvl 7
+// Description:
+// You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.
+// 
+// Find max(abs(length(x) − length(y)))
+// 
+// If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).
+// 
+// Example:
+// a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
+// a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
+// mxdiflg(a1, a2) --> 13
+// Bash note:
+// input : 2 strings with substrings separated by ,
+// output: number as a string
+function mxdiflg(a1, a2) {
+  if (a1.length === 0 || a2.length === 0) {
+      return -1;
+  }
+  const lenA1 = a1.map(str => str.length);
+  const lenA2 = a2.map(str => str.length);
+  const maxA1 = Math.max(...lenA1);
+  const minA1 = Math.min(...lenA1);
+  const maxA2 = Math.max(...lenA2);
+  const minA2 = Math.min(...lenA2);
+  return Math.max(
+      Math.abs(maxA1 - minA2),
+      Math.abs(minA1 - maxA2)
+  );
+}
+// 199: Sleigh Authentication - lvl 8
+// Description:
+// Christmas is coming and many people dreamed of having a ride with Santa's sleigh. But, of course, only Santa himself is allowed to use this wonderful transportation. And in order to make sure, that only he can board the sleigh, there's an authentication mechanism.
+// 
+// Your task is to implement the authenticate() method of the sleigh, which takes the name of the person, who wants to board the sleigh and a secret password. If, and only if, the name equals "Santa Claus" and the password is "Ho Ho Ho!" (yes, even Santa has a secret password with uppercase and lowercase letters and special characters :D), the return value must be true. Otherwise it should return false.
+// 
+// Examples:
+// 
+// var sleigh = new Sleigh();
+// sleigh.authenticate("Santa Claus", "Ho Ho Ho!"); // must return TRUE
+// 
+// sleigh.authenticate("Santa", "Ho Ho Ho!"); // must return FALSE
+// sleigh.authenticate("Santa Claus", "Ho Ho!"); // must return FALSE
+// sleigh.authenticate("jhoffner", "CodeWars"); // Nope, even Jake is not allowed to use the sleigh ;)
+function Sleigh() {}
+
+Sleigh.prototype.authenticate = function(name, password) {
+  return name === "Santa Claus" && password === "Ho Ho Ho!" ? true : false;
+};
+// 198:Convert an array of strings to array of numbers - lvl 7
+// Description:
+// Oh no!
+// Some really funny web dev gave you a sequence of numbers from his API response as an sequence of strings!
+// 
+// You need to cast the whole array to the correct type.
+// 
+// Create the function that takes as a parameter a sequence of numbers represented as strings and outputs a sequence of numbers.
+// 
+// ie:["1", "2", "3"] to [1, 2, 3]Note that you can receive floats as well.
+function toNumberArray(stringarray){
+  return stringarray.map(Number);
+}
+// 197: Add Length - lvl 8
+// Description:
+// What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+// 
+// Example(Input --> Output)
+// "apple ban" --> ["apple 5", "ban 3"]
+// "you will win" --> ["you 3", "will 4", "win 3"]
+function addLength(str) {
+ const words = str.split(' ');
+  const result = words.map(word => `${word} ${word.length}`);
+  return result;
+}
+// 196: Sum of Multiples - lvl 8
+// Description:
+// Your Job
+// Find the sum of all multiples of n below m
+
+// Keep in Mind
+// n and m are natural numbers (positive integers)
+// m is excluded from the multiples
+// Examples
+// sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
+// sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
+// sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+// sumMul(4, -7)  ==> "INVALID"
+function sumMul(n, m){
+  if (n <= 0 || m <= 0) return "INVALID";
+  let sum = 0;
+  for (let i = n; i < m; i += n){
+    sum += i;
+  }
+  return sum;
+// 195: Form The Minimum
+// Task
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates). Only positive integers in the range of 1 to 9 will be passed to the function.
+// 
+// Examples
+// [1, 3, 1] ==> 13
+// [5, 7, 5, 9, 7] ==> 579
+// [1, 9, 3, 1, 7, 4, 6, 6, 7]  ==> 134679
+
+function minValue(values){
+  return parseInt([...new Set(values)].sort().join(''));
+}
+// 194: Row Weights - lvl 7
+// Description:
+// Several people are standing in a row divided into two teams. The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
+// 
+// Task
+// Given an array of positive integers (the weights of the people), return a new array / tuple of two integers (depending on your language), whereby the first one is the total weight of team 1, and the second one is the total weight of team 2. Note that the array will never be empty.
+// 
+// Examples
+// [13, 27, 49] returns [62, 27] or (62, 27) (depending on your language) because the total weight of team 1 is 
+// 13
+// +
+// 49
+// =
+// 62
+// 13+49=62 and the total weight of team 2 is 
+// 27
+// 27.
+// [50, 60, 70, 80] returns [120, 140] or (120, 140) (depending on your language) because the total weight of team 1 is 
+// 50
+// +
+// 70
+// =
+// 120
+// 50+70=120 and the total weight of team 2 is 
+// 60
+// +
+// 80
+// =
+// 140
+// 60+80=140.
+// [80] returns [80, 0] or (80, 0) (depending on your language) because the total weight of team 1 is 
+// 80
+// 80 and the total weight of team 2 is 
+// 0
+// 0.
+function rowWeights(array){
+  let team1 = 0;
+  let team2 = 0;
+  
+  for (let i = 0; i < array.length; i++){
+    if (i % 2 === 0){
+     team1 += array[i];
+  } else { 
+     team2 += array[i];
+    }
+  }
+    return [team1, team2];
+}   
+// 193: Transform To Prime - lvl 6
+// Description:
+// Task
+// Given a list of positive integers, determine the minimum non-negative integer that needs to be inserted so that the sum of all elements becomes a prime number.
+// 
+// Notes
+// The list will always have at least 2 elements.
+// All elements will be positive integers (n > 0).
+// The list may contain duplicate values.
+// The new sum must be the closest prime number that is greater than or equal to the current sum.
+// Examples
+// [3, 1, 2] ==> Should return 1  
+// Explanation: The sum is 6
+// The closest prime greater than or equal to 6 is 7
+// We need to add 1 to make the sum 7 (a prime)
+// 
+// [2, 12, 8, 4, 6] ==> Should return 5  
+// Explanation: The sum is 32
+// The closest prime greater than or equal to 32 is 37
+// We need to add 5 to make the sum 37 (a prime)
+// 
+// [50, 39, 49, 6, 17, 28] ==> Should return 2  
+// Explanation: The sum is 189
+// The closest prime greater than or equal to 189 is 191
+// We need to add 2 to make the sum 191 (a prime)
+function minimumNumber(numbers) {
+  
+  let sum = numbers.reduce((a, b) => a + b, 0);
+  
+  
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i * i <= n; i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+
+
+  let increment = 0;
+  while (!isPrime(sum + increment)) {
+    increment++;
+  }
+
+  return increment;
+}
+// 192: Minimum Steps (Array Series #6) - lvl 7
+// Task
+// Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array until their Sum becomes greater or equal to K.
+// 
+// Notes:
+// List size is at least 3.
+// 
+// All numbers will be positive.
+// 
+// Numbers could occur more than once , (Duplications may exist).
+// 
+// Threshold K will always be reachable.
+// 
+// Input >> Output Examples
+// minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)
+function minimumSteps(numbers, value){
+ numbers.sort((a, b)=> a - b);
+  let sum = 0;
+  let steps = 0;
+  
+  for (let i = 0; i < numbers.length; i++){
+    sum += numbers[i];
+  if (sum >= value)return steps;
+    steps++;
+  }
+  
+  return steps;
+  }
+// 191: Maximum Gap (Array Series #4) - LVL 7
+// Description:
+// Introduction and Warm-up (Highly recommended)
+// Playing With Lists/Arrays Series
+// Task
+// Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.
+// 
+// Notes
+// Array/list size is at least 3 .
+// 
+// Array/list's numbers Will be mixture of positives and negatives also zeros_
+// 
+// Repetition of numbers in the array/list could occur.
+// 
+// The Maximum Gap is computed Regardless the sign.
+function maxGap (numbers){
+  numbers.sort((a, b)=> a - b);
+  
+  let differences = [];
+  
+  for (let i = 1; i < numbers.length; i++){
+    differences.push(numbers[i] - numbers[i - 1]) 
+  }
+  return Math.max(...differences);;
+}
+// 190: Array Leaders (Array Series #3) - lvl 7
+// Description:
+// Introduction and Warm-up (Highly recommended)
+// Playing With Lists/Arrays Series
+// Definition
+// An element is leader if it is greater than The Sum all the elements to its right side.
+// 
+// Task
+// Given an array/list [] of integers , Find all the LEADERS in the array.
+// 
+// Notes
+// Array/list size is at least 3 .
+// 
+// Array/list's numbers Will be mixture of positives , negatives and zeros
+// 
+// Repetition of numbers in the array/list could occur.
+// 
+// Returned Array/list should store the leading numbers in the same order in the original array/list .
+// 
+// Input >> Output Examples
+// arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4}
+// Explanation:
+// 4 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 0 is equal to right sum of its elements (abstract zero).
+// 
+// arrayLeaders ({16, 17, 4, 3, 5, 2}) ==> return {17, 5, 2}
+// Explanation:
+// 17 is greater than the sum all the elements to its right side
+// 
+// 5 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 2 is greater than the sum of its right elements (abstract zero).
+// 
+// arrayLeaders ({5, 2, -1}) ==> return {5, 2}
+// Explanation:
+// 5 is greater than the sum all the elements to its right side
+// 
+// 2 is greater than the sum all the elements to its right side
+// 
+// Note : The last element -1 is less than the sum of its right elements (abstract zero).
+// 
+// arrayLeaders ({0, -1, -29, 3, 2}) ==> return {0, -1, 3, 2}
+// Explanation:
+// 0 is greater than the sum all the elements to its right side
+// 
+// -1 is greater than the sum all the elements to its right side
+// 
+// 3 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 2 is greater than the sum of its right elements (abstract zero).
+function arrayLeaders(numbers){
+  let leaders = [];
+   
+   for (let i = 0; i < numbers.length; i++){
+    let rightSum = numbers.slice(i + 1)
+    .reduce((a, b) => a + b, 0);
+     if (numbers[i] > rightSum){
+      leaders.push(numbers[i]);
+     }
+   }
+   return leaders;
+ }
+// 189: Product Of Maximums Of Array (Array Series #2) - lvl 7
+// Description:
+// Introduction and Warm-up (Highly recommended)
+// Playing With Lists/Arrays Series
+// Task
+// Given an array/list [] of integers , Find the product of the k maximal numbers.
+// 
+// Notes
+// Array/list size is at least 3 .
+// 
+// Array/list's numbers Will be mixture of positives , negatives and zeros
+// 
+// Repetition of numbers in the array/list could occur.
+// 
+// Input >> Output Examples
+// maxProduct ({4, 3, 5}, 2) ==>  return (20)
+// Explanation:
+// Since the size (k) equal 2 , then the subsequence of size 2 whose gives product of maxima is 5 * 4 = 20 .
+// maxProduct ({8, 10 , 9, 7}, 3) ==>  return (720)
+// Explanation:
+// Since the size (k) equal 3 , then the subsequence of size 3 whose gives product of maxima is  8 * 9 * 10 = 720 .
+// maxProduct ({10, 8, 3, 2, 1, 4, 10}, 5) ==> return (9600)
+// Explanation:
+// Since the size (k) equal 5 , then the subsequence of size 5 whose gives product of maxima is  10 * 10 * 8 * 4 * 3 = 9600 .
+// maxProduct ({-4, -27, -15, -6, -1}, 2) ==> return (4)
+// Explanation:
+// Since the size (k) equal 2 , then the subsequence of size 2 whose gives product of maxima is  -4 * -1 = 4 .
+// maxProduct ({10, 3, -1, -27} , 3)  return (-30)
+// Explanation:
+// Since the size (k) equal 3 , then the subsequence of size 3 whose gives product of maxima is 10 * 3 * -1 = -30 .
+// Playing with Numbers Series
+// Playing With Lists/Arrays Series
+// For More Enjoyable Katas
+// ALL translations are welcomed
+// Enjoy Learning !!
+// Zizou
+function maxProduct(arr, k){
+  arr.sort((a, b) => b - a);
+   let prod = [];
+   for (let i = 0; i < k; i++){
+     prod.push(arr[i]);
+   }
+   return prod.reduce((a, b)=> a * b);   
+ }
+// 188: Nth Smallest Element (Array Series #4) - lvl 7
+// 
+// Description:
+// Introduction and warm-up (highly recommended): Playing With Lists/Arrays Series
+// 
+// Task
+// Given an array/list of integers, find the Nth smallest element in the array.
+// Array/list size is at least 3.
+// Notes
+// Repetition in array/list's numbers could occur, so don't remove duplications.
+// Array/list's numbers could be a mixture of positives , negatives and zeros.
+function nthSmallest(arr, pos){
+  arr.sort((a,b)=> a - b)
+   return arr[pos - 1];
+ }
+// 187: Maximum Product - lvl 7
+// Description:
+// Task
+// Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.
+function adjacentElementsProduct(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length - 1; i++){
+    newArray.push(array[i] * array[i + 1])
+  }
+  return Math.max(...newArray);
+}
+// 186: Alternate capitalization - lvl 7
+// Description:
+// Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+// 
+// For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+// 
+// The input will be a lowercase string with no spaces.
+// 
+// Good luck!
+// 
+// If you like this Kata, please try:
+// 
+// Indexed capitalization
+// 
+// Even-odd disparity
+function capitalize(s){
+  const odd = s.split("").map((l, i) => i % 2 !== 0 ? l.toUpperCase() : l).join("");
+  const even = s.split("").map((l, i) => i % 2 === 0 ? l.toUpperCase() : l).join("");
+  return [even, odd];
+};
+// 185: Bumps in the Road - lvl 7
+// Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
+// 
+// Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead
+// 
+// FundamentalsStrings
+// Suggest kata description edits
+function bump(x){
+  let count = 0;
+  for (let i = 0; i < x.length; i++){
+    if (x[i] === 'n'){
+      count++
+    }
+  }
+  return count <= 15 ? "Woohoo!": "Car Dead"
+}
+// REFACTOR:
+const bump=x=>x.split('n').length>16?"Car Dead":"Woohoo!";
+// 184: Beginner Series #2 Clock - lvl 8
+// Clock shows h hours, m minutes and s seconds after midnight.
+// 
+// Your task is to write a function which returns the time since midnight in milliseconds.
+// 
+// Example:
+// h = 0
+// m = 1
+// s = 1
+// 
+// result = 61000
+// Input constraints:
+// 
+// 0 <= h <= 23
+// 0 <= m <= 59
+// 0 <= s <= 59
+// Fundamentals
+// Suggest kata description edits
+function past(h, m, s){
+  return ((h*3600)+(m*60)+s)*1000;
+}
 // 183: Who ate the cookie? - lvl 8
 // Description:
 // For this problem you must create a program that says who ate the last cookie. If the input is a string then "Zach" ate the cookie. If the input is a float or an int then "Monica" ate the cookie. If the input is anything else "the dog" ate the cookie. The way to return the statement is: "Who ate the last cookie? It was (name)!"
@@ -7,7 +474,24 @@
 // Note: Make sure you return the correct message with correct spaces and punctuation.
 // 
 // Please leave feedback for this kata. Cheers!
-
+function cookie(x){
+  if(typeof x === "string"){
+    x = 'Zach';
+  }
+    else if (typeof x === "number"){
+      x = 'Monica';
+    }
+    else{
+      x = 'the dog';
+    }
+    return `Who ate the last cookie? It was ${x}!`;
+    }
+    // REFACTOR:
+    function cookie(x) {
+      var t = typeof x
+      var who = t=="string" ? 'Zach' : t=="number" ? 'Monica' : 'the dog'
+      return `Who ate the last cookie? It was ${who}!`
+    }
 // 182: Largest pair sum in array - lvl 7
 // Description:
 // Given a sequence of numbers, find the largest pair sum in the sequence.
