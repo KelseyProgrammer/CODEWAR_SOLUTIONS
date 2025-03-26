@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -120,6 +120,10 @@
                 {
                     "date": 1743027115170,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,21 @@\n // evaporator(10, 10, 5) -> 29\n // Example:\n // Content is in fact not necessary in the body of the function \"evaporator\", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.\n // Note:\n-\n+function evaporator(content, evap_per_day, threshold) {\n+  let days = 0;\n+  let percentage = 100;\n+  \n+  threshold = threshold / 100;\n+  \n+  while (percentage / 100 > threshold) {\n+      percentage -= percentage * (evap_per_day / 100);\n+      days++;\n+  }\n+  \n+  return days;\n+}\n // 201 : Greet Me - lvl 7\n // Description:\n // Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.\n // \n"
+                },
+                {
+                    "date": 1743027884217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 203 : Multiply the number - lvl 8\n+// Description:\n+// Jack really likes his number five: the trick here is that you have to multiply each number by 5 raised to the number of digits of each numbers, so, for example:\n+// \n+  // 3 -->    15  (  3 * 5¹)\n+//  10 -->   250  ( 10 * 5²)\n+// 200 --> 25000  (200 * 5³)\n+  // 0 -->     0  (  0 * 5¹)\n+//  -3 -->   -15  ( -3 * 5¹)\n+function multiply(number) {\n+  return number * Math.pow(5, Math.abs(number).toString().length);\n+}\n // 202: Deodorant Evaporator - lvl 7  \n // Description:\n // This program tests the life of an evaporator containing a gas.\n // \n"
                 }
             ],
             "date": 1740418149625,
