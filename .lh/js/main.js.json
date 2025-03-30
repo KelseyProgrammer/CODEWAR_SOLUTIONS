@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 31,
+            "activePatchIndex": 32,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -132,6 +132,10 @@
                 {
                     "date": 1743302824418,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,22 @@\n // [\"Jacob\", \"Alex\"]                 -->  \"Jacob and Alex like this\"\n // [\"Max\", \"John\", \"Mark\"]           -->  \"Max, John and Mark like this\"\n // [\"Alex\", \"Jacob\", \"Mark\", \"Max\"]  -->  \"Alex, Jacob and 2 others like this\"\n // Note: For 4 or more names, the number in \"and 2 others\" simply increases.\n-\n+function likes(names) {\n+  switch (names.length) {\n+    case 0:\n+      return \"no one likes this\";\n+    case 1:\n+      return `${names[0]} likes this`;\n+    case 2:\n+      return `${names[0]} and ${names[1]} like this`;\n+    case 3:\n+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;\n+    default:\n+      return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;\n+  }\n+}\n // 203 : Multiply the number - lvl 8\n // Description:\n // Jack really likes his number five: the trick here is that you have to multiply each number by 5 raised to the number of digits of each numbers, so, for example:\n // \n"
+                },
+                {
+                    "date": 1743357610718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 205: Grasshopper - Summation -lvl 8\n+// Description:\n+// Summation\n+// Write a program that finds the summation of every number from 1 to num (both inclusive). The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.\n+// \n+// For example (Input -> Output):\n+// \n+// 2 -> 3 (1 + 2)\n+// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)\n+function summation(num) {\n+  return num * (num + 1) / 2;\n+}\n // 204: Who likes it - lvl 6\n // Description:\n // You probably know the \"like\" system from Facebook and other pages. People can \"like\" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.\n // \n"
                 }
             ],
             "date": 1740418149625,
