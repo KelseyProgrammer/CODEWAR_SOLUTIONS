@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -136,6 +136,14 @@
                 {
                     "date": 1743357610718,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 205: Grasshopper - Summation -lvl 8\n+// Description:\n+// Summation\n+// Write a program that finds the summation of every number from 1 to num (both inclusive). The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.\n+// \n+// For example (Input -> Output):\n+// \n+// 2 -> 3 (1 + 2)\n+// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)\n+function summation(num) {\n+  return num * (num + 1) / 2;\n+}\n // 204: Who likes it - lvl 6\n // Description:\n // You probably know the \"like\" system from Facebook and other pages. People can \"like\" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.\n // \n"
+                },
+                {
+                    "date": 1743795590629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+// 206: Find the Remainder - lvl 8\n+// Description:\n+// Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.\n+// \n+// Examples:\n+// remainder(17, 5)  returns 2\n+// remainder(13, 72) returns 7\n+function remainder(n, m){\n+  return n > m ? n % m : m % n;\n+}\n // 205: Grasshopper - Summation -lvl 8\n // Description:\n // Summation\n // Write a program that finds the summation of every number from 1 to num (both inclusive). The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.\n"
+                },
+                {
+                    "date": 1743795597802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n // \n // Examples:\n // remainder(17, 5)  returns 2\n // remainder(13, 72) returns 7\n-function remainder(n, m){\n+function remainder(n, m) {\n   return n > m ? n % m : m % n;\n }\n // 205: Grasshopper - Summation -lvl 8\n // Description:\n"
                 }
             ],
             "date": 1740418149625,

@@ -1,3 +1,413 @@
+// 206: Find the Remainder - lvl 8
+// Description:
+// Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.
+// 
+// Examples:
+// remainder(17, 5)  returns 2
+// remainder(13, 72) returns 7
+function remainder(n, m) {
+  return n > m ? n % m : m % n;
+}
+// 205: Grasshopper - Summation -lvl 8
+// Description:
+// Summation
+// Write a program that finds the summation of every number from 1 to num (both inclusive). The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.
+// 
+// For example (Input -> Output):
+// 
+// 2 -> 3 (1 + 2)
+// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+function summation(num) {
+  return num * (num + 1) / 2;
+}
+// 204: Who likes it - lvl 6
+// Description:
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+// 
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+// 
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+function likes(names) {
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+    case 1:
+      return `${names[0]} likes this`;
+    case 2:
+      return `${names[0]} and ${names[1]} like this`;
+    case 3:
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+    default:
+      return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+  }
+}
+// 203 : Multiply the number - lvl 8
+// Description:
+// Jack really likes his number five: the trick here is that you have to multiply each number by 5 raised to the number of digits of each numbers, so, for example:
+// 
+  // 3 -->    15  (  3 * 5¹)
+//  10 -->   250  ( 10 * 5²)
+// 200 --> 25000  (200 * 5³)
+  // 0 -->     0  (  0 * 5¹)
+//  -3 -->   -15  ( -3 * 5¹)
+function multiply(number) {
+  return number * Math.pow(5, Math.abs(number).toString().length);
+}
+// 202: Deodorant Evaporator - lvl 7  
+// Description:
+// This program tests the life of an evaporator containing a gas.
+// 
+// We know the content of the evaporator (content in ml), the percentage of foam or gas lost every day (evap_per_day) and the threshold (threshold) in percentage beyond which the evaporator is no longer useful. All numbers are strictly positive.
+// 
+// The program reports the nth day (as an integer) on which the evaporator will be out of use.
+// evaporator(10, 10, 5) -> 29
+// Example:
+// Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
+// Note:
+function evaporator(content, evap_per_day, threshold) {
+  let days = 0;
+  let percentage = 100;
+  
+  threshold = threshold / 100;
+  
+  while (percentage / 100 > threshold) {
+      percentage -= percentage * (evap_per_day / 100);
+      days++;
+  }
+  
+  return days;
+}
+// 201 : Greet Me - lvl 7
+// Description:
+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+// 
+// Example:
+// "riley" --> "Hello Riley!"
+// "JACK"  --> "Hello Jack!"
+function greet(name){
+  return `Hello ${name.charAt(0).toUpperCase() + name.slice(1)}!`;
+}
+// 200: Maximum Length Difference - lvl 7
+// Description:
+// You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.
+// 
+// Find max(abs(length(x) − length(y)))
+// 
+// If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).
+// 
+// Example:
+// a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
+// a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
+// mxdiflg(a1, a2) --> 13
+// Bash note:
+// input : 2 strings with substrings separated by ,
+// output: number as a string
+function mxdiflg(a1, a2) {
+  if (a1.length === 0 || a2.length === 0) {
+      return -1;
+  }
+  const lenA1 = a1.map(str => str.length);
+  const lenA2 = a2.map(str => str.length);
+  const maxA1 = Math.max(...lenA1);
+  const minA1 = Math.min(...lenA1);
+  const maxA2 = Math.max(...lenA2);
+  const minA2 = Math.min(...lenA2);
+  return Math.max(
+      Math.abs(maxA1 - minA2),
+      Math.abs(minA1 - maxA2)
+  );
+}
+// 199: Sleigh Authentication - lvl 8
+// Description:
+// Christmas is coming and many people dreamed of having a ride with Santa's sleigh. But, of course, only Santa himself is allowed to use this wonderful transportation. And in order to make sure, that only he can board the sleigh, there's an authentication mechanism.
+// 
+// Your task is to implement the authenticate() method of the sleigh, which takes the name of the person, who wants to board the sleigh and a secret password. If, and only if, the name equals "Santa Claus" and the password is "Ho Ho Ho!" (yes, even Santa has a secret password with uppercase and lowercase letters and special characters :D), the return value must be true. Otherwise it should return false.
+// 
+// Examples:
+// 
+// var sleigh = new Sleigh();
+// sleigh.authenticate("Santa Claus", "Ho Ho Ho!"); // must return TRUE
+// 
+// sleigh.authenticate("Santa", "Ho Ho Ho!"); // must return FALSE
+// sleigh.authenticate("Santa Claus", "Ho Ho!"); // must return FALSE
+// sleigh.authenticate("jhoffner", "CodeWars"); // Nope, even Jake is not allowed to use the sleigh ;)
+function Sleigh() {}
+
+Sleigh.prototype.authenticate = function(name, password) {
+  return name === "Santa Claus" && password === "Ho Ho Ho!" ? true : false;
+};
+// 198:Convert an array of strings to array of numbers - lvl 7
+// Description:
+// Oh no!
+// Some really funny web dev gave you a sequence of numbers from his API response as an sequence of strings!
+// 
+// You need to cast the whole array to the correct type.
+// 
+// Create the function that takes as a parameter a sequence of numbers represented as strings and outputs a sequence of numbers.
+// 
+// ie:["1", "2", "3"] to [1, 2, 3]Note that you can receive floats as well.
+function toNumberArray(stringarray){
+  return stringarray.map(Number);
+}
+// 197: Add Length - lvl 8
+// Description:
+// What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+// 
+// Example(Input --> Output)
+// "apple ban" --> ["apple 5", "ban 3"]
+// "you will win" --> ["you 3", "will 4", "win 3"]
+function addLength(str) {
+ const words = str.split(' ');
+  const result = words.map(word => `${word} ${word.length}`);
+  return result;
+}
+// 196: Sum of Multiples - lvl 8
+// Description:
+// Your Job
+// Find the sum of all multiples of n below m
+
+// Keep in Mind
+// n and m are natural numbers (positive integers)
+// m is excluded from the multiples
+// Examples
+// sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
+// sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
+// sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+// sumMul(4, -7)  ==> "INVALID"
+function sumMul(n, m){
+  if (n <= 0 || m <= 0) return "INVALID";
+  let sum = 0;
+  for (let i = n; i < m; i += n){
+    sum += i;
+  }
+  return sum;
+// 195: Form The Minimum
+// Task
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates). Only positive integers in the range of 1 to 9 will be passed to the function.
+// 
+// Examples
+// [1, 3, 1] ==> 13
+// [5, 7, 5, 9, 7] ==> 579
+// [1, 9, 3, 1, 7, 4, 6, 6, 7]  ==> 134679
+
+function minValue(values){
+  return parseInt([...new Set(values)].sort().join(''));
+}
+// 194: Row Weights - lvl 7
+// Description:
+// Several people are standing in a row divided into two teams. The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
+// 
+// Task
+// Given an array of positive integers (the weights of the people), return a new array / tuple of two integers (depending on your language), whereby the first one is the total weight of team 1, and the second one is the total weight of team 2. Note that the array will never be empty.
+// 
+// Examples
+// [13, 27, 49] returns [62, 27] or (62, 27) (depending on your language) because the total weight of team 1 is 
+// 13
+// +
+// 49
+// =
+// 62
+// 13+49=62 and the total weight of team 2 is 
+// 27
+// 27.
+// [50, 60, 70, 80] returns [120, 140] or (120, 140) (depending on your language) because the total weight of team 1 is 
+// 50
+// +
+// 70
+// =
+// 120
+// 50+70=120 and the total weight of team 2 is 
+// 60
+// +
+// 80
+// =
+// 140
+// 60+80=140.
+// [80] returns [80, 0] or (80, 0) (depending on your language) because the total weight of team 1 is 
+// 80
+// 80 and the total weight of team 2 is 
+// 0
+// 0.
+function rowWeights(array){
+  let team1 = 0;
+  let team2 = 0;
+  
+  for (let i = 0; i < array.length; i++){
+    if (i % 2 === 0){
+     team1 += array[i];
+  } else { 
+     team2 += array[i];
+    }
+  }
+    return [team1, team2];
+}   
+// 193: Transform To Prime - lvl 6
+// Description:
+// Task
+// Given a list of positive integers, determine the minimum non-negative integer that needs to be inserted so that the sum of all elements becomes a prime number.
+// 
+// Notes
+// The list will always have at least 2 elements.
+// All elements will be positive integers (n > 0).
+// The list may contain duplicate values.
+// The new sum must be the closest prime number that is greater than or equal to the current sum.
+// Examples
+// [3, 1, 2] ==> Should return 1  
+// Explanation: The sum is 6
+// The closest prime greater than or equal to 6 is 7
+// We need to add 1 to make the sum 7 (a prime)
+// 
+// [2, 12, 8, 4, 6] ==> Should return 5  
+// Explanation: The sum is 32
+// The closest prime greater than or equal to 32 is 37
+// We need to add 5 to make the sum 37 (a prime)
+// 
+// [50, 39, 49, 6, 17, 28] ==> Should return 2  
+// Explanation: The sum is 189
+// The closest prime greater than or equal to 189 is 191
+// We need to add 2 to make the sum 191 (a prime)
+function minimumNumber(numbers) {
+  
+  let sum = numbers.reduce((a, b) => a + b, 0);
+  
+  
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i * i <= n; i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+
+
+  let increment = 0;
+  while (!isPrime(sum + increment)) {
+    increment++;
+  }
+
+  return increment;
+}
+// 192: Minimum Steps (Array Series #6) - lvl 7
+// Task
+// Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array until their Sum becomes greater or equal to K.
+// 
+// Notes:
+// List size is at least 3.
+// 
+// All numbers will be positive.
+// 
+// Numbers could occur more than once , (Duplications may exist).
+// 
+// Threshold K will always be reachable.
+// 
+// Input >> Output Examples
+// minimumSteps({1, 10, 12, 9, 2, 3}, 6)  ==>  return (2)
+function minimumSteps(numbers, value){
+ numbers.sort((a, b)=> a - b);
+  let sum = 0;
+  let steps = 0;
+  
+  for (let i = 0; i < numbers.length; i++){
+    sum += numbers[i];
+  if (sum >= value)return steps;
+    steps++;
+  }
+  
+  return steps;
+  }
+// 191: Maximum Gap (Array Series #4) - LVL 7
+// Description:
+// Introduction and Warm-up (Highly recommended)
+// Playing With Lists/Arrays Series
+// Task
+// Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.
+// 
+// Notes
+// Array/list size is at least 3 .
+// 
+// Array/list's numbers Will be mixture of positives and negatives also zeros_
+// 
+// Repetition of numbers in the array/list could occur.
+// 
+// The Maximum Gap is computed Regardless the sign.
+function maxGap (numbers){
+  numbers.sort((a, b)=> a - b);
+  
+  let differences = [];
+  
+  for (let i = 1; i < numbers.length; i++){
+    differences.push(numbers[i] - numbers[i - 1]) 
+  }
+  return Math.max(...differences);;
+}
+// 190: Array Leaders (Array Series #3) - lvl 7
+// Description:
+// Introduction and Warm-up (Highly recommended)
+// Playing With Lists/Arrays Series
+// Definition
+// An element is leader if it is greater than The Sum all the elements to its right side.
+// 
+// Task
+// Given an array/list [] of integers , Find all the LEADERS in the array.
+// 
+// Notes
+// Array/list size is at least 3 .
+// 
+// Array/list's numbers Will be mixture of positives , negatives and zeros
+// 
+// Repetition of numbers in the array/list could occur.
+// 
+// Returned Array/list should store the leading numbers in the same order in the original array/list .
+// 
+// Input >> Output Examples
+// arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4}
+// Explanation:
+// 4 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 0 is equal to right sum of its elements (abstract zero).
+// 
+// arrayLeaders ({16, 17, 4, 3, 5, 2}) ==> return {17, 5, 2}
+// Explanation:
+// 17 is greater than the sum all the elements to its right side
+// 
+// 5 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 2 is greater than the sum of its right elements (abstract zero).
+// 
+// arrayLeaders ({5, 2, -1}) ==> return {5, 2}
+// Explanation:
+// 5 is greater than the sum all the elements to its right side
+// 
+// 2 is greater than the sum all the elements to its right side
+// 
+// Note : The last element -1 is less than the sum of its right elements (abstract zero).
+// 
+// arrayLeaders ({0, -1, -29, 3, 2}) ==> return {0, -1, 3, 2}
+// Explanation:
+// 0 is greater than the sum all the elements to its right side
+// 
+// -1 is greater than the sum all the elements to its right side
+// 
+// 3 is greater than the sum all the elements to its right side
+// 
+// Note : The last element 2 is greater than the sum of its right elements (abstract zero).
+function arrayLeaders(numbers){
+  let leaders = [];
+   
+   for (let i = 0; i < numbers.length; i++){
+    let rightSum = numbers.slice(i + 1)
+    .reduce((a, b) => a + b, 0);
+     if (numbers[i] > rightSum){
+      leaders.push(numbers[i]);
+     }
+   }
+   return leaders;
+ }
 // 189: Product Of Maximums Of Array (Array Series #2) - lvl 7
 // Description:
 // Introduction and Warm-up (Highly recommended)

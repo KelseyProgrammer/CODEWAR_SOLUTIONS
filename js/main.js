@@ -1,3 +1,13 @@
+// 206: Find the Remainder - lvl 8
+// Description:
+// Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.
+// 
+// Examples:
+// remainder(17, 5)  returns 2
+// remainder(13, 72) returns 7
+function remainder(n, m) {
+  return n > m ? n % m : m % n;
+}
 // 205: Grasshopper - Summation -lvl 8
 // Description:
 // Summation
