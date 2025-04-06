@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -144,6 +144,10 @@
                 {
                     "date": 1743795597802,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n // \n // Examples:\n // remainder(17, 5)  returns 2\n // remainder(13, 72) returns 7\n-function remainder(n, m){\n+function remainder(n, m) {\n   return n > m ? n % m : m % n;\n }\n // 205: Grasshopper - Summation -lvl 8\n // Description:\n"
+                },
+                {
+                    "date": 1743928878982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,32 @@\n+// 207: Basic subclasses - Adam and Eve - lvl 8\n+// Description:\n+// According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.\n+// \n+// You have to do God's job. The creation method must return an array of length 2 containing objects (representing Adam and Eve). The first object in the array should be an instance of the class Man. The second should be an instance of the class Woman. Both objects have to be subclasses of Human. Your job is to implement the Human, Man and Woman classes.\n+class Human {\n+  constructor(name) {\n+    this.name = name;\n+  }\n+}\n+\n+class Man extends Human {\n+  constructor(name = \"Adam\") {\n+    super(name);\n+  }\n+}\n+\n+class Woman extends Human {\n+  constructor(name = \"Eve\") {\n+    super(name);\n+  }\n+}\n+\n+class God {\n+  static create() {\n+    return [new Man(), new Woman()];\n+  }\n+}\n // 206: Find the Remainder - lvl 8\n // Description:\n // Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.\n // \n"
                 }
             ],
             "date": 1740418149625,
