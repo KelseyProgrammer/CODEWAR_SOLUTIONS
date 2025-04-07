@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 37,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -148,6 +148,14 @@
                 {
                     "date": 1743928878982,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,32 @@\n+// 207: Basic subclasses - Adam and Eve - lvl 8\n+// Description:\n+// According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.\n+// \n+// You have to do God's job. The creation method must return an array of length 2 containing objects (representing Adam and Eve). The first object in the array should be an instance of the class Man. The second should be an instance of the class Woman. Both objects have to be subclasses of Human. Your job is to implement the Human, Man and Woman classes.\n+class Human {\n+  constructor(name) {\n+    this.name = name;\n+  }\n+}\n+\n+class Man extends Human {\n+  constructor(name = \"Adam\") {\n+    super(name);\n+  }\n+}\n+\n+class Woman extends Human {\n+  constructor(name = \"Eve\") {\n+    super(name);\n+  }\n+}\n+\n+class God {\n+  static create() {\n+    return [new Man(), new Woman()];\n+  }\n+}\n // 206: Find the Remainder - lvl 8\n // Description:\n // Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.\n // \n"
+                },
+                {
+                    "date": 1744050651431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,25 @@\n+// 208: Speed Control - lvl 7\n+// Description:\n+// In John's car the GPS records every s seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit). For example, below is part of a record with s = 15:\n+// \n+// x = [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]\n+// The sections are:\n+// \n+// 0.0-0.19, 0.19-0.5, 0.5-0.75, 0.75-1.0, 1.0-1.25, 1.25-1.50, 1.5-1.75, 1.75-2.0, 2.0-2.25\n+// We can calculate John's average hourly speed on every section and we get:\n+// \n+// [45.6, 74.4, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]\n+// Given s and x the task is to return as an integer the *floor* of the maximum average speed per hour obtained on the sections of x. If x length is less than or equal to 1 return 0 since the car didn't move.\n+// \n+// Example:\n+// With the above data your function gps(s, x) should return 74\n+// \n+// Note\n+// With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:\n+// \n+//  (3600 * delta_distance) / s.\n+\n // 207: Basic subclasses - Adam and Eve - lvl 8\n // Description:\n // According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.\n // \n"
+                },
+                {
+                    "date": 1744050715258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,24 @@\n // Note\n // With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:\n // \n //  (3600 * delta_distance) / s.\n-\n+function gps(s, x) {\n+  //   edge cases 1st\n+    if(x.length < 1){\n+      return 0;\n+    }\n+    let maxSpeed = 0;\n+    \n+    for (let i = 0; i < x.length - 1; i++){\n+      const deltaDistance = x[i+1] - x[i];\n+      const speed = (3600 * deltaDistance) / s;\n+      if (speed > maxSpeed){\n+        maxSpeed = speed;\n+      }\n+    }\n+    return Math.floor(maxSpeed);\n+  }\n // 207: Basic subclasses - Adam and Eve - lvl 8\n // Description:\n // According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.\n // \n"
                 }
             ],
             "date": 1740418149625,
