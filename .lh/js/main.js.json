@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 37,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -156,6 +156,10 @@
                 {
                     "date": 1744050715258,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,24 @@\n // Note\n // With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:\n // \n //  (3600 * delta_distance) / s.\n-\n+function gps(s, x) {\n+  //   edge cases 1st\n+    if(x.length < 1){\n+      return 0;\n+    }\n+    let maxSpeed = 0;\n+    \n+    for (let i = 0; i < x.length - 1; i++){\n+      const deltaDistance = x[i+1] - x[i];\n+      const speed = (3600 * deltaDistance) / s;\n+      if (speed > maxSpeed){\n+        maxSpeed = speed;\n+      }\n+    }\n+    return Math.floor(maxSpeed);\n+  }\n // 207: Basic subclasses - Adam and Eve - lvl 8\n // Description:\n // According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.\n // \n"
+                },
+                {
+                    "date": 1744505243626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,34 @@\n+// 209: Highest Rank Number in an Array - lvl 6\n+// Description:\n+// Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.\n+// \n+// Note: no empty arrays will be given.\n+// \n+// Examples\n+// [12, 10, 8, 12, 7, 6, 4, 10, 12]              -->  12\n+// [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12\n+// [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]  -->   3\n+function highestRank(arr) {\n+  const countMap = {};\n+  let maxCount = 0;\n+  let highest = arr[0];\n+\n+  \n+  for (let num of arr) {\n+    countMap[num] = (countMap[num] || 0) + 1;\n+\n+    if (\n+      countMap[num] > maxCount ||\n+      (countMap[num] === maxCount && num > highest)\n+    ) {\n+      maxCount = countMap[num];\n+      highest = num;\n+    }\n+  }\n+\n+  return highest;\n+}\n // 208: Speed Control - lvl 7\n // Description:\n // In John's car the GPS records every s seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit). For example, below is part of a record with s = 15:\n // \n"
                 }
             ],
             "date": 1740418149625,
