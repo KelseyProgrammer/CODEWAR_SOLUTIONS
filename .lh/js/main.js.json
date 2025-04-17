@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 41,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -172,6 +172,10 @@
                 {
                     "date": 1744682507483,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,17 @@\n+// 212: Descending Order - lvl 7\n+// Description:\n+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.\n+// \n+// Examples:\n+// Input: 42145 Output: 54421\n+// \n+// Input: 145263 Output: 654321\n+// \n+// Input: 123456789 Output: 987654321\n+function descendingOrder(n){\n+  return parseInt(n.toString().split('').sort((a, b) => b - a).join(''));\n+}\n // 211: Sum of Triangular Numbers - lvl 7\n // Description:\n // Your task is to return the sum of Triangular Numbers up-to-and-including the nth Triangular Number.\n // Triangular Number: \"any of the series of numbers (1, 3, 6, 10, 15, etc.) obtained by continued summation of the natural numbers 1, 2, 3, 4, 5, etc.\"\n"
+                },
+                {
+                    "date": 1744919649377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 213: esreveR - lvl 7\n+// Description:\n+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)\n+// \n+// (the dedicated builtin(s) functionalities are deactivated)\n+const reverse = arr => {\n+  let revList = [];\n+  for (let i = 0; i < arr.length - 1; i--){\n+    revList.push(arr[i]);\n+  }\n+  return revList; \n+}\n // 212: Descending Order - lvl 7\n // Description:\n // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.\n // \n"
                 }
             ],
             "date": 1740418149625,

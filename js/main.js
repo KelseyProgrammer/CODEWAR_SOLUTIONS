@@ -1,3 +1,15 @@
+// 213: esreveR - lvl 7
+// Description:
+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+// 
+// (the dedicated builtin(s) functionalities are deactivated)
+const reverse = arr => {
+  let revList = [];
+  for (let i = 0; i < arr.length - 1; i--){
+    revList.push(arr[i]);
+  }
+  return revList; 
+}
 // 212: Descending Order - lvl 7
 // Description:
 // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
