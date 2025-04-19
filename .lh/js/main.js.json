@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 42,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -176,6 +176,10 @@
                 {
                     "date": 1744919649377,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n+// 213: esreveR - lvl 7\n+// Description:\n+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)\n+// \n+// (the dedicated builtin(s) functionalities are deactivated)\n+const reverse = arr => {\n+  let revList = [];\n+  for (let i = 0; i < arr.length - 1; i--){\n+    revList.push(arr[i]);\n+  }\n+  return revList; \n+}\n // 212: Descending Order - lvl 7\n // Description:\n // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.\n // \n"
+                },
+                {
+                    "date": 1745028164812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,21 @@\n+// 214: Classy Classes - lvl 8\n+// Description:\n+// Classy Classes\n+// Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes\n+// \n+// Task\n+// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34\n+class Person {\n+  constructor(name, age) {\n+    this.name = name;\n+    this.age = age;\n+  }\n+  \n+  get info() {\n+    return `${this.name}s age is ${this.age}`;\n+  }\n+}\n // 213: esreveR - lvl 7\n // Description:\n // Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)\n // \n"
                 }
             ],
             "date": 1740418149625,
