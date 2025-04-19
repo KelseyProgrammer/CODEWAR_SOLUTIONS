@@ -17,9 +17,7 @@
 // 
 // ArraysListsFundamentals
 // Suggest kata description edits
-function findAverage(nums) {
-  return nums.reduce((acc, curr)=> acc + curr) / nums.length;
- }
+
 // 214: Classy Classes - lvl 8
 // Description:
 // Classy Classes
