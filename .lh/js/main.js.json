@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 46,
+            "activePatchIndex": 47,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -192,6 +192,10 @@
                 {
                     "date": 1745195219681,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+// 216: Kata Example Twist - lvl 8\n+// Description:\n+// This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).\n+// \n+// Add the value \"codewars\" to the array websites 1,000 times.\n+var websites = []\n+for (i=0; i<1000; i++)\n+{\n+  websites.push(\"codewars\");\n+}\n // 215: Grasshopper - Array Mean - lvl 8\n // Find Mean\n // Find the mean (average) of a list of numbers in an array.\n // \n"
+                },
+                {
+                    "date": 1745266883560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,10 @@\n+// 217: Regexp Basics - is it a digit? - lvl 8\n+// Description:\n+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a single digit (0-9), false otherwise.\n+String.prototype.digit = function () {\n+  return this.length === 1 && this >= '0' && this <= '9';\n+};\n // 216: Kata Example Twist - lvl 8\n // Description:\n // This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).\n // \n"
                 }
             ],
             "date": 1740418149625,

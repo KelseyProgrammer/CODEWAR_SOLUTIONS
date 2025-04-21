@@ -1,3 +1,9 @@
+// 217: Regexp Basics - is it a digit? - lvl 8
+// Description:
+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a single digit (0-9), false otherwise.
+String.prototype.digit = function () {
+  return this.length === 1 && this >= '0' && this <= '9';
+};
 // 216: Kata Example Twist - lvl 8
 // Description:
 // This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).
