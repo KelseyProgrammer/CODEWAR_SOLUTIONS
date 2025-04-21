@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 45,
+            "activePatchIndex": 46,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -188,6 +188,10 @@
                 {
                     "date": 1745096758821,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n // 3. The mean (or average) of this list is 4\n // \n // ArraysListsFundamentals\n // Suggest kata description edits\n-\n+function findAverage(nums) {\n+  return nums.reduce((acc, curr)=> acc + curr) / nums.length;\n+ }\n // 214: Classy Classes - lvl 8\n // Description:\n // Classy Classes\n // Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes\n"
+                },
+                {
+                    "date": 1745195219681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+// 216: Kata Example Twist - lvl 8\n+// Description:\n+// This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).\n+// \n+// Add the value \"codewars\" to the array websites 1,000 times.\n+var websites = []\n+for (i=0; i<1000; i++)\n+{\n+  websites.push(\"codewars\");\n+}\n // 215: Grasshopper - Array Mean - lvl 8\n // Find Mean\n // Find the mean (average) of a list of numbers in an array.\n // \n"
                 }
             ],
             "date": 1740418149625,
