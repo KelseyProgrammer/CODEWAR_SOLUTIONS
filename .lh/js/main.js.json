@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 48,
+            "activePatchIndex": 49,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -200,6 +200,10 @@
                 {
                     "date": 1745356050748,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n+// 218: Power of Two - lvl 7\n+// Description:\n+// Given a positive integer n, return either true if n is a power of 2, or false if it is not.\n+// \n+// Remember, a number is a power of 2 if it's 1 * itself some number of times.\n+function isPowerOfTwo(n) {\n+  return n > 0 && (n & (n - 1)) === 0;\n+}\n // 217: Regexp Basics - is it a digit? - lvl 8\n // Description:\n // Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a single digit (0-9), false otherwise.\n String.prototype.digit = function () {\n"
+                },
+                {
+                    "date": 1745441894263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,31 @@\n+// 219: Sum of numbers from 0 to N - lvl 7\n+// Description:\n+// We want to generate a function that computes the series starting from 0 and ending until the given number.\n+var SequenceSum = (function() {\n+  function SequenceSum() {}\n+\n+  SequenceSum.showSequence = function(count) {\n+    if (count < 0) {\n+      return count + \"<0\";\n+    } else if (count === 0) {\n+      return \"0=0\";\n+    } else {\n+      let sequence = \"\";\n+      let sum = 0;\n+      for (let i = 0; i <= count; i++) {\n+        sequence += i;\n+        sum += i;\n+        if (i < count) {\n+          sequence += \"+\";\n+        }\n+      }\n+      return sequence + \" = \" + sum;\n+    }\n+  };\n+\n+  return SequenceSum;\n+})();\n // 218: Power of Two - lvl 7\n // Description:\n // Given a positive integer n, return either true if n is a power of 2, or false if it is not.\n // \n"
                 }
             ],
             "date": 1740418149625,

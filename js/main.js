@@ -1,3 +1,30 @@
+// 219: Sum of numbers from 0 to N - lvl 7
+// Description:
+// We want to generate a function that computes the series starting from 0 and ending until the given number.
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    if (count < 0) {
+      return count + "<0";
+    } else if (count === 0) {
+      return "0=0";
+    } else {
+      let sequence = "";
+      let sum = 0;
+      for (let i = 0; i <= count; i++) {
+        sequence += i;
+        sum += i;
+        if (i < count) {
+          sequence += "+";
+        }
+      }
+      return sequence + " = " + sum;
+    }
+  };
+
+  return SequenceSum;
+})();
 // 218: Power of Two - lvl 7
 // Description:
 // Given a positive integer n, return either true if n is a power of 2, or false if it is not.

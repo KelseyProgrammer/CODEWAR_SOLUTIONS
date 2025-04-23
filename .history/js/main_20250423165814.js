@@ -1,3 +1,336 @@
+// 219: Sum of numbers from 0 to N - lvl 7
+// Description:
+// We want to generate a function that computes the series starting from 0 and ending until the given number.
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    if (count < 0) {
+      return count + "<0";
+    } else if (count === 0) {
+      return "0=0";
+    } else {
+      let sequence = "";
+      let sum = 0;
+      for (let i = 0; i <= count; i++) {
+        sequence += i;
+        sum += i;
+        if (i < count) {
+          sequence += "+";
+        }
+      }
+      return sequence + " = " + sum;
+    }
+  };
+
+  return SequenceSum;
+})();
+// 218: Power of Two - lvl 7
+// Description:
+// Given a positive integer n, return either true if n is a power of 2, or false if it is not.
+// 
+// Remember, a number is a power of 2 if it's 1 * itself some number of times.
+function isPowerOfTwo(n) {
+  return n > 0 && (n & (n - 1)) === 0;
+}
+// 217: Regexp Basics - is it a digit? - lvl 8
+// Description:
+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a single digit (0-9), false otherwise.
+String.prototype.digit = function () {
+  return this.length === 1 && this >= '0' && this <= '9';
+};
+// 216: Kata Example Twist - lvl 8
+// Description:
+// This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).
+// 
+// Add the value "codewars" to the array websites 1,000 times.
+var websites = []
+for (i=0; i<1000; i++)
+{
+  websites.push("codewars");
+}
+// 215: Grasshopper - Array Mean - lvl 8
+// Find Mean
+// Find the mean (average) of a list of numbers in an array.
+// 
+// Information
+// To find the mean (average) of a set of numbers add all of the numbers together and divide by the number of values in the list.
+// 
+// For an example list of 1, 3, 5, 7
+// 
+// 1. Add all of the numbers
+// 
+// 1+3+5+7 = 16
+// 2. Divide by the number of values in the list. In this example there are 4 numbers in the list.
+// 
+// 16/4 = 4
+// 3. The mean (or average) of this list is 4
+// 
+// ArraysListsFundamentals
+// Suggest kata description edits
+function findAverage(nums) {
+  return nums.reduce((acc, curr)=> acc + curr) / nums.length;
+ }
+// 214: Classy Classes - lvl 8
+// Description:
+// Classy Classes
+// Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes
+// 
+// Task
+// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  get info() {
+    return `${this.name}s age is ${this.age}`;
+  }
+}
+// 213: esreveR - lvl 7
+// Description:
+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+// 
+// (the dedicated builtin(s) functionalities are deactivated)
+const reverse = arr => {
+  let revList = [];
+  for (let i = 0; i < arr.length - 1; i--){
+    revList.push(arr[i]);
+  }
+  return revList; 
+}
+// 212: Descending Order - lvl 7
+// Description:
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+// 
+// Examples:
+// Input: 42145 Output: 54421
+// 
+// Input: 145263 Output: 654321
+// 
+// Input: 123456789 Output: 987654321
+function descendingOrder(n){
+  return parseInt(n.toString().split('').sort((a, b) => b - a).join(''));
+}
+// 211: Sum of Triangular Numbers - lvl 7
+// Description:
+// Your task is to return the sum of Triangular Numbers up-to-and-including the nth Triangular Number.
+// Triangular Number: "any of the series of numbers (1, 3, 6, 10, 15, etc.) obtained by continued summation of the natural numbers 1, 2, 3, 4, 5, etc."
+// [01]
+// 02 [03]
+// 04 05 [06]
+// 07 08 09 [10]
+// 11 12 13 14 [15]
+// 16 17 18 19 20 [21]
+// e.g. If 4 is given: 1 + 3 + 6 + 10 = 20.
+// Triangular Numbers cannot be negative so return 0 if a negative number is given.
+function sumTriangularNumbers(n) {
+  let sum = 0
+  
+  for (let i = 1; i <= n; i++){
+    sum += (i *(i + 1)) / 2;
+  }
+  return sum;
+}
+// 210: Name on billboard - lvl 8
+// Description:
+// You are given a string of letters and a billboard. You need to calculate the cost of the billboard. The cost is the number of letters multiplied by 30.
+// Examples
+// "John" --> 4 * 30 = 120
+// "Alex" --> 4 * 30 = 120
+// "Jacob" --> 6 * 30 = 180 
+function billboard(name, price = 30){
+  return name.length * price;
+}
+// 209: Highest Rank Number in an Array - lvl 6
+// Description:
+// Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.
+// 
+// Note: no empty arrays will be given.
+// 
+// Examples
+// [12, 10, 8, 12, 7, 6, 4, 10, 12]              -->  12
+// [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12
+// [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]  -->   3
+function highestRank(arr) {
+  const countMap = {};
+  let maxCount = 0;
+  let highest = arr[0];
+
+  
+  for (let num of arr) {
+    countMap[num] = (countMap[num] || 0) + 1;
+
+    if (
+      countMap[num] > maxCount ||
+      (countMap[num] === maxCount && num > highest)
+    ) {
+      maxCount = countMap[num];
+      highest = num;
+    }
+  }
+
+  return highest;
+}
+// 208: Speed Control - lvl 7
+// Description:
+// In John's car the GPS records every s seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit). For example, below is part of a record with s = 15:
+// 
+// x = [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]
+// The sections are:
+// 
+// 0.0-0.19, 0.19-0.5, 0.5-0.75, 0.75-1.0, 1.0-1.25, 1.25-1.50, 1.5-1.75, 1.75-2.0, 2.0-2.25
+// We can calculate John's average hourly speed on every section and we get:
+// 
+// [45.6, 74.4, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]
+// Given s and x the task is to return as an integer the *floor* of the maximum average speed per hour obtained on the sections of x. If x length is less than or equal to 1 return 0 since the car didn't move.
+// 
+// Example:
+// With the above data your function gps(s, x) should return 74
+// 
+// Note
+// With floats it can happen that results depends on the operations order. To calculate hourly speed you can use:
+// 
+//  (3600 * delta_distance) / s.
+function gps(s, x) {
+  //   edge cases 1st
+    if(x.length < 1){
+      return 0;
+    }
+    let maxSpeed = 0;
+    
+    for (let i = 0; i < x.length - 1; i++){
+      const deltaDistance = x[i+1] - x[i];
+      const speed = (3600 * deltaDistance) / s;
+      if (speed > maxSpeed){
+        maxSpeed = speed;
+      }
+    }
+    return Math.floor(maxSpeed);
+  }
+// 207: Basic subclasses - Adam and Eve - lvl 8
+// Description:
+// According to the creation myths of the Abrahamic religions, Adam and Eve were the first Humans to wander the Earth.
+// 
+// You have to do God's job. The creation method must return an array of length 2 containing objects (representing Adam and Eve). The first object in the array should be an instance of the class Man. The second should be an instance of the class Woman. Both objects have to be subclasses of Human. Your job is to implement the Human, Man and Woman classes.
+class Human {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Man extends Human {
+  constructor(name = "Adam") {
+    super(name);
+  }
+}
+
+class Woman extends Human {
+  constructor(name = "Eve") {
+    super(name);
+  }
+}
+
+class God {
+  static create() {
+    return [new Man(), new Woman()];
+  }
+}
+// 206: Find the Remainder - lvl 8
+// Description:
+// Write a function that accepts two numbers and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN.
+// 
+// Examples:
+// remainder(17, 5)  returns 2
+// remainder(13, 72) returns 7
+function remainder(n, m) {
+  return n > m ? n % m : m % n;
+}
+// 205: Grasshopper - Summation -lvl 8
+// Description:
+// Summation
+// Write a program that finds the summation of every number from 1 to num (both inclusive). The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests.
+// 
+// For example (Input -> Output):
+// 
+// 2 -> 3 (1 + 2)
+// 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+function summation(num) {
+  return num * (num + 1) / 2;
+}
+// 204: Who likes it - lvl 6
+// Description:
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+// 
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+// 
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+function likes(names) {
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+    case 1:
+      return `${names[0]} likes this`;
+    case 2:
+      return `${names[0]} and ${names[1]} like this`;
+    case 3:
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+    default:
+      return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+  }
+}
+// 203 : Multiply the number - lvl 8
+// Description:
+// Jack really likes his number five: the trick here is that you have to multiply each number by 5 raised to the number of digits of each numbers, so, for example:
+// 
+  // 3 -->    15  (  3 * 5¹)
+//  10 -->   250  ( 10 * 5²)
+// 200 --> 25000  (200 * 5³)
+  // 0 -->     0  (  0 * 5¹)
+//  -3 -->   -15  ( -3 * 5¹)
+function multiply(number) {
+  return number * Math.pow(5, Math.abs(number).toString().length);
+}
+// 202: Deodorant Evaporator - lvl 7  
+// Description:
+// This program tests the life of an evaporator containing a gas.
+// 
+// We know the content of the evaporator (content in ml), the percentage of foam or gas lost every day (evap_per_day) and the threshold (threshold) in percentage beyond which the evaporator is no longer useful. All numbers are strictly positive.
+// 
+// The program reports the nth day (as an integer) on which the evaporator will be out of use.
+// evaporator(10, 10, 5) -> 29
+// Example:
+// Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
+// Note:
+function evaporator(content, evap_per_day, threshold) {
+  let days = 0;
+  let percentage = 100;
+  
+  threshold = threshold / 100;
+  
+  while (percentage / 100 > threshold) {
+      percentage -= percentage * (evap_per_day / 100);
+      days++;
+  }
+  
+  return days;
+}
+// 201 : Greet Me - lvl 7
+// Description:
+// Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+// 
+// Example:
+// "riley" --> "Hello Riley!"
+// "JACK"  --> "Hello Jack!"
+function greet(name){
+  return `Hello ${name.charAt(0).toUpperCase() + name.slice(1)}!`;
+}
 // 200: Maximum Length Difference - lvl 7
 // Description:
 // You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.
