@@ -1,3 +1,10 @@
+// 220: get ascii value of character - lvl 8
+// Get ASCII value of a character.
+// 
+// For the ASCII table you can refer to http://www.asciitable.com/
+function getASCII(c){
+  return c.charCodeAt(0);
+}
 // 219: Sum of numbers from 0 to N - lvl 7
 // Description:
 // We want to generate a function that computes the series starting from 0 and ending until the given number.
