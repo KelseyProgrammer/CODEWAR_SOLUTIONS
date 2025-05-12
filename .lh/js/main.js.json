@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 53,
+            "activePatchIndex": 56,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -220,6 +220,18 @@
                 {
                     "date": 1746930117560,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,18 @@\n+// 224: Template Strings - lvl 8\n+// Description:\n+// Template Strings\n+// Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings\n+// Task\n+// Your task is to return the correct string using the Template String Feature.\n+// Input\n+// Two Strings, no validation is needed.\n+// Output\n+// You must output a string containing the two strings with the word ```' are '```\n+// Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings\n+const templateStrings = function(noun, adjective) {\n+  return `${noun} are ${adjective}`;\n+}\n // 223: For UFC Fans (Total Beginners): Conor McGregor vs George Saint Pierre\n // This is a beginner friendly kata especially for UFC/MMA fans.\n // \n // It's a fight between the two legends: Conor McGregor vs George Saint Pierre in Madison Square Garden. Only one fighter will remain standing, and after the fight in an interview with Joe Rogan the winner will make his legendary statement. It's your job to return the right statement depending on the winner!\n"
+                },
+                {
+                    "date": 1747019774148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,11 @@\n+// 225: Parts of a list - lvl 7\n+Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n+// \n+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )\n+// Each part will be in a string\n+// Elements of a pair must be in the same order as in the original array.\n+\n // 224: Template Strings - lvl 8\n // Description:\n // Template Strings\n // Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings\n"
+                },
+                {
+                    "date": 1747019788241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n // 225: Parts of a list - lvl 7\n-Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n-// \n+// Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n // Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )\n // Each part will be in a string\n // Elements of a pair must be in the same order as in the original array.\n \n"
+                },
+                {
+                    "date": 1747019821834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,17 @@\n // Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n // Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )\n // Each part will be in a string\n // Elements of a pair must be in the same order as in the original array.\n-\n+function partlist(arr) {\n+    let result = [];\n+    for (let i = 1; i < arr.length; i++) {\n+        let firstPart = arr.slice(0, i).join(' ');\n+        let secondPart = arr.slice(i).join(' ');\n+        result.push([firstPart, secondPart]);\n+    }\n+    return result;\n+}\n // 224: Template Strings - lvl 8\n // Description:\n // Template Strings\n // Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings\n"
                 }
             ],
             "date": 1740418149625,
