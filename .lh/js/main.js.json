@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 56,
+            "activePatchIndex": 58,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -232,6 +232,14 @@
                 {
                     "date": 1747019821834,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,17 @@\n // Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n // Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )\n // Each part will be in a string\n // Elements of a pair must be in the same order as in the original array.\n-\n+function partlist(arr) {\n+    let result = [];\n+    for (let i = 1; i < arr.length; i++) {\n+        let firstPart = arr.slice(0, i).join(' ');\n+        let secondPart = arr.slice(i).join(' ');\n+        result.push([firstPart, secondPart]);\n+    }\n+    return result;\n+}\n // 224: Template Strings - lvl 8\n // Description:\n // Template Strings\n // Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings\n"
+                },
+                {
+                    "date": 1747105965994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,17 @@\n+// 226 Find the nth Digit of a Number - lvl 7\n+// Description:\n+// Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).\n+// \n+// Note\n+// If num is negative, ignore its sign and treat it as a positive value\n+// If nth is not positive, return -1\n+// Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0\n+function findDigit(num, nth) {\n+  if (nth <= 0) return -1;\n+  const numStr = Math.abs(num).toString();\n+  return numStr[numStr.length - nth] || 0;\n+}\n // 225: Parts of a list - lvl 7\n // Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.\n // Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )\n // Each part will be in a string\n"
+                },
+                {
+                    "date": 1747105979333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n // 226 Find the nth Digit of a Number - lvl 7\n // Description:\n // Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).\n-// \n-// Note\n // If num is negative, ignore its sign and treat it as a positive value\n // If nth is not positive, return -1\n // Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0\n function findDigit(num, nth) {\n"
                 }
             ],
             "date": 1740418149625,

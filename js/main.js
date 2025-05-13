@@ -1,3 +1,14 @@
+// 226 Find the nth Digit of a Number - lvl 7
+// Description:
+// Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).
+// If num is negative, ignore its sign and treat it as a positive value
+// If nth is not positive, return -1
+// Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
+function findDigit(num, nth) {
+  if (nth <= 0) return -1;
+  const numStr = Math.abs(num).toString();
+  return numStr[numStr.length - nth] || 0;
+}
 // 225: Parts of a list - lvl 7
 // Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
 // Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
