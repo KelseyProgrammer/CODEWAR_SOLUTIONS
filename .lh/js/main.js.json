@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 58,
+            "activePatchIndex": 59,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -240,6 +240,10 @@
                 {
                     "date": 1747105979333,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n // 226 Find the nth Digit of a Number - lvl 7\n // Description:\n // Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).\n-// \n-// Note\n // If num is negative, ignore its sign and treat it as a positive value\n // If nth is not positive, return -1\n // Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0\n function findDigit(num, nth) {\n"
+                },
+                {
+                    "date": 1747160834320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,38 @@\n+// 227: simple calculator - lvl 8\n+// Description:\n+// You are required to create a simple calculator that returns the result of addition, subtraction, multiplication or division of two numbers.\n+\n+// Your function will accept three arguments:\n+// The first and second argument should be numbers.\n+// The third argument should represent a sign indicating the operation to perform on these two numbers.\n+\n+// if the variables are not numbers or the sign does not belong to the list above a message \"unknown value\" must be returned.\n+\n+// Example:\n+// arguments: 1, 2, \"+\"\n+// should return 3\n+\n+// arguments: 1, 2, \"&\"\n+// should return \"unknown value\"\n+\n+// arguments: 1, \"k\", \"*\"\n+// should return \"unknown value\"\n+function calculator(a,b,sign){\n+\tif ((typeof a === \"number\") && (typeof b === \"number\")) {\n+    switch (sign) {\n+    case \"+\":\n+      return a + b;\n+    case \"-\":\n+      return a - b;\n+    case \"*\":\n+      return a * b;\n+    case \"/\":\n+      return a / b;\n+    }\n+  }\n+  return \"unknown value\";\n+}\n // 226 Find the nth Digit of a Number - lvl 7\n // Description:\n // Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).\n // If num is negative, ignore its sign and treat it as a positive value\n"
                 }
             ],
             "date": 1740418149625,
