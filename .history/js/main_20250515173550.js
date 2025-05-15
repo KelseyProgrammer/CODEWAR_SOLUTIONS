@@ -1,3 +1,254 @@
+// 228: Factorial - lvl 7
+// Description:
+// In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+// 
+// Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript) or ValueError (Python) or return -1 (C).
+// 
+// More details about factorial can be found here.
+const factorial = n => {
+  if (n < 0 || n > 12) {
+    throw new RangeError("Input must be between 0 and 12");
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = n; i >= 1; i--) {
+    result *= i;
+  }
+  return result;
+};
+// 227: simple calculator - lvl 8
+// Description:
+// You are required to create a simple calculator that returns the result of addition, subtraction, multiplication or division of two numbers.
+
+// Your function will accept three arguments:
+// The first and second argument should be numbers.
+// The third argument should represent a sign indicating the operation to perform on these two numbers.
+
+// if the variables are not numbers or the sign does not belong to the list above a message "unknown value" must be returned.
+
+// Example:
+// arguments: 1, 2, "+"
+// should return 3
+
+// arguments: 1, 2, "&"
+// should return "unknown value"
+
+// arguments: 1, "k", "*"
+// should return "unknown value"
+function calculator(a,b,sign){
+	if ((typeof a === "number") && (typeof b === "number")) {
+    switch (sign) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "/":
+      return a / b;
+    }
+  }
+  return "unknown value";
+}
+// 226 Find the nth Digit of a Number - lvl 7
+// Description:
+// Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).
+// If num is negative, ignore its sign and treat it as a positive value
+// If nth is not positive, return -1
+// Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
+function findDigit(num, nth) {
+  if (nth <= 0) return -1;
+  const numStr = Math.abs(num).toString();
+  return numStr[numStr.length - nth] || 0;
+}
+// 225: Parts of a list - lvl 7
+// Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+// Each part will be in a string
+// Elements of a pair must be in the same order as in the original array.
+function partlist(arr) {
+    let result = [];
+    for (let i = 1; i < arr.length; i++) {
+        let firstPart = arr.slice(0, i).join(' ');
+        let secondPart = arr.slice(i).join(' ');
+        result.push([firstPart, secondPart]);
+    }
+    return result;
+}
+// 224: Template Strings - lvl 8
+// Description:
+// Template Strings
+// Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings
+// Task
+// Your task is to return the correct string using the Template String Feature.
+// Input
+// Two Strings, no validation is needed.
+// Output
+// You must output a string containing the two strings with the word ```' are '```
+// Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
+const templateStrings = function(noun, adjective) {
+  return `${noun} are ${adjective}`;
+}
+// 223: For UFC Fans (Total Beginners): Conor McGregor vs George Saint Pierre
+// This is a beginner friendly kata especially for UFC/MMA fans.
+// 
+// It's a fight between the two legends: Conor McGregor vs George Saint Pierre in Madison Square Garden. Only one fighter will remain standing, and after the fight in an interview with Joe Rogan the winner will make his legendary statement. It's your job to return the right statement depending on the winner!
+// 
+// If the winner is George Saint Pierre he will obviously say:
+// 
+// "I am not impressed by your performance."
+// If the winner is Conor McGregor he will most undoubtedly say:
+// 
+// "I'd like to take this chance to apologize.. To absolutely NOBODY!"
+// Good Luck!
+function quote(fighter) {
+  return fighter === "Conor McGregor" ? "I'd like to take this chance to apologize.. To absolutely NOBODY!" : "I am not impressed by your performance.";
+}
+// 222: Powers of 2 - lvl 8
+// Description:
+// Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n (inclusive).
+// 
+// n = 0  --> [1]        # [2^0]
+// n = 1  --> [1, 2]     # [2^0, 2^1]
+// n = 2  --> [1, 2, 4]  # [2^0, 2^1, 2^2]
+function powersOfTwo(n){
+  var result = [];
+  for (var i = 0; i <= n; i++) {
+    result.push(Math.pow(2, i));
+  }
+  return result;
+}
+// 221: A Strange Trip to the Market - lvl 8
+// Description:
+// Description:
+// You're on your way to the market when you hear beautiful music coming from a nearby street performer. The notes come together like you wouln't believe as the musician puts together patterns of tunes. As you wonder what kind of algorithm you could use to shift octaves by 8 pitches or something silly like that, it dawns on you that you have been watching the musician for some 10 odd minutes. You ask, "how much do people normally tip for something like this?" The artist looks up. "It's always gonna be about tree fiddy."
+function isLochNessMonster(s) {
+  return /(tree fiddy|3\.50|three fifty)/.test(s);
+}
+// 220: get ascii value of character - lvl 8
+// Get ASCII value of a character.
+// 
+// For the ASCII table you can refer to http://www.asciitable.com/
+function getASCII(c){
+  return c.charCodeAt(0);
+}
+// 219: Sum of numbers from 0 to N - lvl 7
+// Description:
+// We want to generate a function that computes the series starting from 0 and ending until the given number.
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    if (count < 0) {
+      return count + "<0";
+    } else if (count === 0) {
+      return "0=0";
+    } else {
+      let sequence = "";
+      let sum = 0;
+      for (let i = 0; i <= count; i++) {
+        sequence += i;
+        sum += i;
+        if (i < count) {
+          sequence += "+";
+        }
+      }
+      return sequence + " = " + sum;
+    }
+  };
+
+  return SequenceSum;
+})();
+// 218: Power of Two - lvl 7
+// Description:
+// Given a positive integer n, return either true if n is a power of 2, or false if it is not.
+// 
+// Remember, a number is a power of 2 if it's 1 * itself some number of times.
+function isPowerOfTwo(n) {
+  return n > 0 && (n & (n - 1)) === 0;
+}
+// 217: Regexp Basics - is it a digit? - lvl 8
+// Description:
+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a single digit (0-9), false otherwise.
+String.prototype.digit = function () {
+  return this.length === 1 && this >= '0' && this <= '9';
+};
+// 216: Kata Example Twist - lvl 8
+// Description:
+// This is an easy twist to the example kata (provided by Codewars when learning how to create your own kata).
+// 
+// Add the value "codewars" to the array websites 1,000 times.
+var websites = []
+for (i=0; i<1000; i++)
+{
+  websites.push("codewars");
+}
+// 215: Grasshopper - Array Mean - lvl 8
+// Find Mean
+// Find the mean (average) of a list of numbers in an array.
+// 
+// Information
+// To find the mean (average) of a set of numbers add all of the numbers together and divide by the number of values in the list.
+// 
+// For an example list of 1, 3, 5, 7
+// 
+// 1. Add all of the numbers
+// 
+// 1+3+5+7 = 16
+// 2. Divide by the number of values in the list. In this example there are 4 numbers in the list.
+// 
+// 16/4 = 4
+// 3. The mean (or average) of this list is 4
+// 
+// ArraysListsFundamentals
+// Suggest kata description edits
+function findAverage(nums) {
+  return nums.reduce((acc, curr)=> acc + curr) / nums.length;
+ }
+// 214: Classy Classes - lvl 8
+// Description:
+// Classy Classes
+// Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes
+// 
+// Task
+// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  get info() {
+    return `${this.name}s age is ${this.age}`;
+  }
+}
+// 213: esreveR - lvl 7
+// Description:
+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+// 
+// (the dedicated builtin(s) functionalities are deactivated)
+const reverse = arr => {
+  let revList = [];
+  for (let i = 0; i < arr.length - 1; i--){
+    revList.push(arr[i]);
+  }
+  return revList; 
+}
+// 212: Descending Order - lvl 7
+// Description:
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+// 
+// Examples:
+// Input: 42145 Output: 54421
+// 
+// Input: 145263 Output: 654321
+// 
+// Input: 123456789 Output: 987654321
+function descendingOrder(n){
+  return parseInt(n.toString().split('').sort((a, b) => b - a).join(''));
+}
 // 211: Sum of Triangular Numbers - lvl 7
 // Description:
 // Your task is to return the sum of Triangular Numbers up-to-and-including the nth Triangular Number.

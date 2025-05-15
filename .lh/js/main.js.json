@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 59,
+            "activePatchIndex": 60,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -244,6 +244,10 @@
                 {
                     "date": 1747160834320,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,38 @@\n+// 227: simple calculator - lvl 8\n+// Description:\n+// You are required to create a simple calculator that returns the result of addition, subtraction, multiplication or division of two numbers.\n+\n+// Your function will accept three arguments:\n+// The first and second argument should be numbers.\n+// The third argument should represent a sign indicating the operation to perform on these two numbers.\n+\n+// if the variables are not numbers or the sign does not belong to the list above a message \"unknown value\" must be returned.\n+\n+// Example:\n+// arguments: 1, 2, \"+\"\n+// should return 3\n+\n+// arguments: 1, 2, \"&\"\n+// should return \"unknown value\"\n+\n+// arguments: 1, \"k\", \"*\"\n+// should return \"unknown value\"\n+function calculator(a,b,sign){\n+\tif ((typeof a === \"number\") && (typeof b === \"number\")) {\n+    switch (sign) {\n+    case \"+\":\n+      return a + b;\n+    case \"-\":\n+      return a - b;\n+    case \"*\":\n+      return a * b;\n+    case \"/\":\n+      return a / b;\n+    }\n+  }\n+  return \"unknown value\";\n+}\n // 226 Find the nth Digit of a Number - lvl 7\n // Description:\n // Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).\n // If num is negative, ignore its sign and treat it as a positive value\n"
+                },
+                {
+                    "date": 1747344950025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,24 @@\n+// 228: Factorial - lvl 7\n+// Description:\n+// In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.\n+// \n+// Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript) or ValueError (Python) or return -1 (C).\n+// \n+// More details about factorial can be found here.\n+const factorial = n => {\n+  if (n < 0 || n > 12) {\n+    throw new RangeError(\"Input must be between 0 and 12\");\n+  }\n+  if (n === 0 || n === 1) {\n+    return 1;\n+  }\n+  let result = 1;\n+  for (let i = n; i >= 1; i--) {\n+    result *= i;\n+  }\n+  return result;\n+};\n // 227: simple calculator - lvl 8\n // Description:\n // You are required to create a simple calculator that returns the result of addition, subtraction, multiplication or division of two numbers.\n \n"
                 }
             ],
             "date": 1740418149625,
