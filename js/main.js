@@ -1,3 +1,21 @@
+// 230: Configure an express server : lvl 7
+// our Task
+// Inside the solution function you have to require express and start a server.
+// 
+// The PORT and HOST are going to be pre-loaded in the process.env object (in a node application process.env stores the environment configuration).
+// 
+// process.env = {
+  // PORT: 3000,
+  // HOST: '0.0.0.0',
+// };
+const solution = () => {
+  var express = require('express');
+  var app = express();
+  app.listen(process.env.PORT, process.env.HOST, () => {
+
+  });
+  
+  };
 // 229: Simple beads count - lvl 7
 // 
 // Two red beads are placed between every two blue beads. There are N blue beads. After looking at the arrangement below work out the number of red beads.
