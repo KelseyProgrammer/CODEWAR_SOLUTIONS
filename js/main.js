@@ -1,3 +1,21 @@
+// 232: Build a square = lvl 7
+// Description:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// 
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+// 
+// +++
+// +++
+// +++
+function generateShape(integer) {
+  let shape = [];
+  let row = '+'.repeat(integer);
+  for (let i = 0; i < integer; i++) {
+    shape.push(row);
+  }
+  return shape.join('\n');
+}
 // 231: Training JS #10: loop statement --for - lvl 8
 // Task
 // The function pickIt accepts 1 parameter, arr, which is an array of numbers. We need to traverse arr by using a for loop. If an element is an odd number, push it to the odd array, and if it's an even number, push it to the evenarray.

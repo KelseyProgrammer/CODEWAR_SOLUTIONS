@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 63,
+            "activePatchIndex": 64,
             "patches": [
                 {
                     "date": 1740418149625,
@@ -260,6 +260,10 @@
                 {
                     "date": 1747532465294,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,22 @@\n+// 231: Training JS #10: loop statement --for - lvl 8\n+// Task\n+// The function pickIt accepts 1 parameter, arr, which is an array of numbers. We need to traverse arr by using a for loop. If an element is an odd number, push it to the odd array, and if it's an even number, push it to the evenarray.\n+// \n+// I've defined two arrays odd and even in the function, and also wrote the return statement. Your work is to write a for loop.\n+// \n+// If you forgot how to push an element to an array, please refer to lesson 4.\n+unction pickIt(arr){\n+  let odd = [], even = [];\n+  for (let i = 0; i < arr.length; i++){\n+    if (arr[i] % 2 === 0){\n+      even.push(arr[i]);\n+    }else {\n+      odd.push(arr[i]);\n+    }\n+  }\n+  return [odd,even];\n+}\n // 230: Configure an express server : lvl 7\n // our Task\n // Inside the solution function you have to require express and start a server.\n // \n"
+                },
+                {
+                    "date": 1747625128539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,22 @@\n+// 232: Build a square = lvl 7\n+// Description:\n+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.\n+// \n+// Example\n+// n = 3, so I expect a 3x3 square back just like below as a string:\n+// \n+// +++\n+// +++\n+// +++\n+function generateShape(integer) {\n+  let shape = [];\n+  let row = '+'.repeat(integer);\n+  for (let i = 0; i < integer; i++) {\n+    shape.push(row);\n+  }\n+  return shape.join('\\n');\n+}\n // 231: Training JS #10: loop statement --for - lvl 8\n // Task\n // The function pickIt accepts 1 parameter, arr, which is an array of numbers. We need to traverse arr by using a for loop. If an element is an odd number, push it to the odd array, and if it's an even number, push it to the evenarray.\n // \n"
                 }
             ],
             "date": 1740418149625,
