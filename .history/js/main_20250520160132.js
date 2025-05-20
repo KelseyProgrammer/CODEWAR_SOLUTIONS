@@ -1,3 +1,167 @@
+// 233: Tidy Number (Special Numbers Series #9) - lvl 7
+// Definition
+// A Tidy Number is a number whose digits are in non-decreasing order.
+// 
+// Task
+// Given a number, determine if it is tidy or not.
+// 
+// Notes
+// The number passed will always be positive.
+// Return the result as a boolean.
+function tidyNumber(n){
+  let digits = String(n).split('').map(Number);
+  
+   for (let i = 0; i < digits.length - 1; i++){
+    if (digits[i] > digits[i + 1]){
+      return false;
+    }
+  }
+  return true;
+}
+// 232: Build a square = lvl 7
+// Description:
+// I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+// 
+// Example
+// n = 3, so I expect a 3x3 square back just like below as a string:
+// 
+// +++
+// +++
+// +++
+function generateShape(integer) {
+  let shape = [];
+  let row = '+'.repeat(integer);
+  for (let i = 0; i < integer; i++) {
+    shape.push(row);
+  }
+  return shape.join('\n');
+}
+// 231: Training JS #10: loop statement --for - lvl 8
+// Task
+// The function pickIt accepts 1 parameter, arr, which is an array of numbers. We need to traverse arr by using a for loop. If an element is an odd number, push it to the odd array, and if it's an even number, push it to the evenarray.
+// 
+// I've defined two arrays odd and even in the function, and also wrote the return statement. Your work is to write a for loop.
+// 
+// If you forgot how to push an element to an array, please refer to lesson 4.
+unction pickIt(arr){
+  let odd = [], even = [];
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] % 2 === 0){
+      even.push(arr[i]);
+    }else {
+      odd.push(arr[i]);
+    }
+  }
+  return [odd,even];
+}
+// 230: Configure an express server : lvl 7
+// our Task
+// Inside the solution function you have to require express and start a server.
+// 
+// The PORT and HOST are going to be pre-loaded in the process.env object (in a node application process.env stores the environment configuration).
+// 
+// process.env = {
+  // PORT: 3000,
+  // HOST: '0.0.0.0',
+// };
+const solution = () => {
+  var express = require('express');
+  var app = express();
+  app.listen(process.env.PORT, process.env.HOST, () => {
+
+  });
+  
+  };
+// 229: Simple beads count - lvl 7
+// 
+// Two red beads are placed between every two blue beads. There are N blue beads. After looking at the arrangement below work out the number of red beads.
+// 
+// @ @@ @ @@ @ @@ @ @@ @ @@ @
+// 
+// Implement a function returning the number of red beads.
+// If there are less than 2 blue beads return 0.
+const countRedBeads = n => {
+  return n < 2 ? 0 : n * 2 - 2;
+}
+// 228: Factorial - lvl 7
+// Description:
+// In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+// 
+// Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript) or ValueError (Python) or return -1 (C).
+// 
+// More details about factorial can be found here.
+const factorial = n => {
+  if (n < 0 || n > 12) {
+    throw new RangeError("Input must be between 0 and 12");
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = n; i >= 1; i--) {
+    result *= i;
+  }
+  return result;
+};
+// 227: simple calculator - lvl 8
+// Description:
+// You are required to create a simple calculator that returns the result of addition, subtraction, multiplication or division of two numbers.
+
+// Your function will accept three arguments:
+// The first and second argument should be numbers.
+// The third argument should represent a sign indicating the operation to perform on these two numbers.
+
+// if the variables are not numbers or the sign does not belong to the list above a message "unknown value" must be returned.
+
+// Example:
+// arguments: 1, 2, "+"
+// should return 3
+
+// arguments: 1, 2, "&"
+// should return "unknown value"
+
+// arguments: 1, "k", "*"
+// should return "unknown value"
+function calculator(a,b,sign){
+	if ((typeof a === "number") && (typeof b === "number")) {
+    switch (sign) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "/":
+      return a / b;
+    }
+  }
+  return "unknown value";
+}
+// 226 Find the nth Digit of a Number - lvl 7
+// Description:
+// Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).
+// If num is negative, ignore its sign and treat it as a positive value
+// If nth is not positive, return -1
+// Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
+function findDigit(num, nth) {
+  if (nth <= 0) return -1;
+  const numStr = Math.abs(num).toString();
+  return numStr[numStr.length - nth] || 0;
+}
+// 225: Parts of a list - lvl 7
+// Description:Write a function partlist that gives all the ways to divide a list (an array) of at least two elements into two non-empty parts.
+// Each two non empty parts will be in a pair (or an array for languages without tuples or a structin C - C: see Examples test Cases - )
+// Each part will be in a string
+// Elements of a pair must be in the same order as in the original array.
+function partlist(arr) {
+    let result = [];
+    for (let i = 1; i < arr.length; i++) {
+        let firstPart = arr.slice(0, i).join(' ');
+        let secondPart = arr.slice(i).join(' ');
+        result.push([firstPart, secondPart]);
+    }
+    return result;
+}
 // 224: Template Strings - lvl 8
 // Description:
 // Template Strings

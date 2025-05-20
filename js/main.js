@@ -1,3 +1,23 @@
+// 233: Tidy Number (Special Numbers Series #9) - lvl 7
+// Definition
+// A Tidy Number is a number whose digits are in non-decreasing order.
+// 
+// Task
+// Given a number, determine if it is tidy or not.
+// 
+// Notes
+// The number passed will always be positive.
+// Return the result as a boolean.
+function tidyNumber(n){
+  let digits = String(n).split('').map(Number);
+  
+   for (let i = 0; i < digits.length - 1; i++){
+    if (digits[i] > digits[i + 1]){
+      return false;
+    }
+  }
+  return true;
+}
 // 232: Build a square = lvl 7
 // Description:
 // I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
