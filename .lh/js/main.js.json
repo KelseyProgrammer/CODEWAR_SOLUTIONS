@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1747771275812,
@@ -12,6 +12,14 @@
                 {
                     "date": 1747771292741,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,18 @@\n // \n // Notes\n // The number passed will always be positive.\n // Return the result as a boolean.\n-\n+function tidyNumber(n){\n+  let digits = String(n).split('').map(Number);\n+  \n+   for (let i = 0; i < digits.length - 1; i++){\n+    if (digits[i] > digits[i + 1]){\n+      return false;\n+    }\n+  }\n+  return true;\n+}\n // 232: Build a square = lvl 7\n // Description:\n // I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.\n // \n"
+                },
+                {
+                    "date": 1748135989573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,13 @@\n+// 234: Playing with digits - lvl 6\n+// Description:\n+// Some numbers have funny properties. For example:\n+// \n+// 89 --> 8¹ + 9² = 89 * 1\n+// 695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2\n+// 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51\n+// Given two positive integers n and p, we want to find a positive integer k, if it exists, such that the sum of the digits of n raised to consecutive powers starting from p is equal to k * n.In other words, writing the consecutive digits of n as a, b, c, d ..., is there an integer k such that :(ap+bp+1+cp+2+dp+3+...)=n∗k(a p +b p+1 +c p+2 +d p+3 +...)=n∗kIf it is the case we will return k, if not return -1.Note: n and p will always be strictly positive integers\n+\n // 233: Tidy Number (Special Numbers Series #9) - lvl 7\n // Definition\n // A Tidy Number is a number whose digits are in non-decreasing order.\n // \n"
+                },
+                {
+                    "date": 1748136021315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,20 @@\n // 89 --> 8¹ + 9² = 89 * 1\n // 695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2\n // 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51\n // Given two positive integers n and p, we want to find a positive integer k, if it exists, such that the sum of the digits of n raised to consecutive powers starting from p is equal to k * n.In other words, writing the consecutive digits of n as a, b, c, d ..., is there an integer k such that :(ap+bp+1+cp+2+dp+3+...)=n∗k(a p +b p+1 +c p+2 +d p+3 +...)=n∗kIf it is the case we will return k, if not return -1.Note: n and p will always be strictly positive integers\n-\n+function digPow(n, p) {\n+  const digits = String(n).split('').map(Number);\n+  let sum = 0;\n+  \n+  for (let i = 0; i < digits.length; i++) {\n+    sum += Math.pow(digits[i], p + i);\n+  }\n+  \n+  const k = sum / n;\n+  \n+  return k % 1 === 0 && k > 0 ? k : -1;\n+}\n // 233: Tidy Number (Special Numbers Series #9) - lvl 7\n // Definition\n // A Tidy Number is a number whose digits are in non-decreasing order.\n // \n"
                 }
             ],
             "date": 1747771275812,
