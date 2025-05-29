@@ -1,21 +1,3 @@
-// 236: Smallest value of an array - lvl 7
-// Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
-// 
-// Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
-// 
-// Some examples:
-function min(arr, toReturn){
-  let minVal = arr[0];
-  let minIndex = 0;
-
-  for(let i = 0; i < arr.length; i++){
-    if (arr[i] < minVal){
-      minVal = arr[i];
-      minIndex = i;
-    }
-  }
-  return toReturn === 'value' ? minVal : minIndex;
-}
 // 235: Exclusive "or" (xor) Logical Operator - lvl 8
 // Exclusive "or" (xor) Logical Operator
 // Overview

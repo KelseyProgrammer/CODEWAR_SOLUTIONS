@@ -1,35 +1,3 @@
-// 236: Smallest value of an array - lvl 7
-// Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
-// 
-// Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
-// 
-// Some examples:
-function min(arr, toReturn){
-  let minVal = arr[0];
-  let minIndex = 0;
-
-  for(let i = 0; i < arr.length; i++){
-    if (arr[i] < minVal){
-      minVal = arr[i];
-      minIndex = i;
-    }
-  }
-  return toReturn === 'value' ? minVal : minIndex;
-}
-// 235: Exclusive "or" (xor) Logical Operator - lvl 8
-// Exclusive "or" (xor) Logical Operator
-// Overview
-// In some scripting languages like PHP, there exists a logical operator (e.g. &&, ||, and, or, etc.) called the "Exclusive Or" (hence the name of this Kata). The exclusive or evaluates two booleans. It then returns true if exactly one of the two expressions are true, false otherwise. For example:
-// 
-// false xor false == false // since both are false
-// true xor false == true // exactly one of the two expressions are true
-// false xor true == true // exactly one of the two expressions are true
-// true xor true == false // Both are true.  "xor" only returns true if EXACTLY one of the two expressions evaluate to true.
-// Task
-// Since we cannot define keywords in Javascript (well, at least I don't know how to do it), your task is to define a function xor(a, b) where a and b are the two expressions to be evaluated. Your xor function should have the behaviour described above, returning true if exactly one of the two expressions evaluate to true, false otherwise.
-function xor(a, b) {
-  return (a && !b || b && !a);
-    }
 // 234: Playing with digits - lvl 6
 // Description:
 // Some numbers have funny properties. For example:
