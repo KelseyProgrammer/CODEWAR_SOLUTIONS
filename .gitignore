@@ -1,0 +1,11 @@
+# Ignore .history and .lh directories everywhere
+**/.history/
+**/.lh/
+.history/
+.lh/
+
+# Also ignore specific files
+**/.history/**/*
+**/.lh/**/*
+.history/**/*
+.lh/**/* 
