@@ -1,3 +1,16 @@
+// 240: Sum of Odd Cubed Numbers - lvl 7
+// Description:
+// Find the sum of the odd numbers within an array, after cubing the initial integers. The function should return undefined if any of the values aren't numbers.
+const cubeOdd = arr => {
+  if (!arr.every(el => typeof el === 'number')) {
+    return undefined;
+  }
+
+  return arr
+    .filter(n => n % 2 !== 0)
+    .map(n => n ** 3)
+    .reduce((a, b) => a + b, 0);
+};
 // 239: Filter the number - lvl 7
 // Filter the number
 // Oh, no! The number has been mixed up with the text. Your goal is to retrieve the number from the text, can you return the number back to its original state?
