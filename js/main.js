@@ -1,3 +1,8 @@
+// 242: Parse float - lvl 8
+function parseF(input) {
+  const result = parseFloat(input);
+  return isNaN(result) ? null : result;
+}
 // 241: Array Helpers - lvl 6
 // This kata is designed to test your ability to extend the functionality of built-in classes. In this case, we want you to extend the built-in Array class with the following methods: square(), cube(), average(), sum(), even() and odd().
 // 
