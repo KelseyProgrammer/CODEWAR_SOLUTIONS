@@ -1,3 +1,22 @@
+// 245: Find out whether the shape is a cube - lvl 8
+// Description:
+// To find the volume (centimeters cubed) of a cuboid you use the formula:
+// 
+// volume = Length * Width * Height
+// 
+// But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+// 
+// It's up to you to find out whether the cuboid could have equal sides (could be a cube).
+// 
+// Return true if the cuboid could have equal sides, return false otherwise.
+// 
+// Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+// 
+// Note: side will be an integer
+function cubeChecker(volume, side) {
+  if (volume <= 0 || side <= 0) return false;
+  return side ** 3 === volume;
+}
 // 244: ES6 string addition - lvl 8
 // It is easy to join two strings together like this string1 + string2.
 // 
