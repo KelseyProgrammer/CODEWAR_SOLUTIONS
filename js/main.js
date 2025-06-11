@@ -1,3 +1,7 @@
+// 246: Training JS #18: Methods of String object--concat() split() and its good friend join() - lvl 8
+function splitAndMerge(str, sp) {
+  return str.split(" ").map(word => word.split("").join(sp)).join(" ");
+}
 // 245: Find out whether the shape is a cube - lvl 8
 // Description:
 // To find the volume (centimeters cubed) of a cuboid you use the formula:
