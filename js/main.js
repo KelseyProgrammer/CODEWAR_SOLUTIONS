@@ -1,3 +1,13 @@
+// 247: pick a set of first elements - lvl 8
+// Write a function to get the first element(s) of a sequence. Passing a parameter n (default=1) will return the first n element(s) of the sequence.
+// 
+// If n == 0 return an empty sequence []
+function first(arr, n) {
+  if (n === undefined) {
+    return [arr[0]]; 
+  }
+  return arr.slice(0, n); 
+}
 // 246: Training JS #18: Methods of String object--concat() split() and its good friend join() - lvl 8
 function splitAndMerge(str, sp) {
   return str.split(" ").map(word => word.split("").join(sp)).join(" ");
