@@ -1,3 +1,9 @@
+// 249: ASCII Total - lvl 8
+// Description:
+// You'll be given a string, and have to return the sum of all characters as an int. The function should be able to handle all printable ASCII characters.
+function uniTotal(str) {
+  return str.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+}
 // 248: The Office I - Outed - lvl 7
 // Description:
 // Your colleagues have been looking over your shoulder. When you should have been doing your boring real job, you've been using the work computers to smash in endless hours of codewars.
