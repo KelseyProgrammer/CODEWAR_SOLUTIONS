@@ -1,3 +1,10 @@
+// 252: Regex count lowercase letters - lvl 8
+// Your task is simply to count the total number of lowercase letters in a string.
+function countLowercaseLetters(str) {
+  const matches = str.match(/[a-z]/g);
+  return matches ? matches.length : 0;
+}
+
 // 251: Array.diff - lvl 6
 // Description:
 // Implement a function that computes the difference between two lists. The function should remove all occurrences of elements from the first list (a) that are present in the second list (b). The order of elements in the first list should be preserved in the result.
