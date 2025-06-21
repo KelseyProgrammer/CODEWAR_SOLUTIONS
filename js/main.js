@@ -1,3 +1,14 @@
+// 253: Training JS #8: Conditional statement--switch - lvl 8
+function howManydays(month){
+  switch (month){
+     case 2: return 28
+     case 4:
+     case 6:
+     case 9:
+     case 11: return 30
+  }
+  return 31
+}
 // 252: Regex count lowercase letters - lvl 8
 // Your task is simply to count the total number of lowercase letters in a string.
 function countLowercaseLetters(str) {
