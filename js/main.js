@@ -1,3 +1,18 @@
+// 257: Color Ghost - lvl 8
+// Description:
+// Color Ghost
+// Create a class Ghost
+// 
+// Ghost objects are instantiated without any arguments.
+// 
+// Ghost objects are given a random color attribute of "white" or "yellow" or "purple" or "red" when instantiated
+class Ghost {
+  constructor() {
+    const colors = ["white", "yellow", "purple", "red"];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    this.color = colors[randomIndex];
+  }
+}
 // 256: Is there a vowel in there? - lvl 8
 // Description:
 // Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
