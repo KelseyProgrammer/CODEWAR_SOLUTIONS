@@ -1,3 +1,15 @@
+// 261: OOP: Object Oriented Piracy - lvl 8
+class Ship {
+  constructor(draft, crew) {
+    this.draft = draft;
+    this.crew = crew;
+  }
+  
+  isWorthIt() {
+    const total = this.draft - (1.5 * this.crew);
+    return total > 20;
+  }
+}
 // 260: Functional Addition - lvl 7
 // Create a function add(n)/Add(n) which returns a function that always adds n to any number
 // 
