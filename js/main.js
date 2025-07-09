@@ -1,3 +1,15 @@
+// 262: Training JS #9: loop statement --while and do..while - lvl 8
+function padIt(str,n){
+  while(n>0){
+    if(n%2 === 0) {
+      str = str + "*";
+    }else{
+      str = "*" + str;
+    }
+    n --;
+  }
+  return str;
+}
 // 261: OOP: Object Oriented Piracy - lvl 8
 class Ship {
   constructor(draft, crew) {
