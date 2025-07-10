@@ -1,3 +1,16 @@
+// 264 - Rotate for a Max - lvl 7
+function maxRot(n) {
+    let s = n.toString();
+    let maxNum = n;
+    for (let i = 0; i < s.length - 1; i++) {
+        s = s.substring(0, i) + s.substring(i + 1) + s[i];
+        const currentNum = parseInt(s, 10);
+        if (currentNum > maxNum) {
+            maxNum = currentNum;
+        }
+    }
+    return maxNum;
+}
 // 263: Quadrants - lvl 8
 // Description:
 // Task
