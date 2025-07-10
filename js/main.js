@@ -1,3 +1,31 @@
+// 263: Quadrants - lvl 8
+// Description:
+// Task
+// Given a point in a Euclidean plane (x and y), return the quadrant the point exists in: 1, 2, 3 or 4 (integer). x and y are non-zero integers, therefore the given point never lies on the axes.
+// 
+// Examples
+// (1, 2)     => 1
+// (3, 5)     => 1
+// (-10, 100) => 2
+// (-1, -9)   => 3
+// (19, -56)  => 4
+function quadrant(x, y) {
+  x = Math.sign(x);
+  y = Math.sign(y);
+  
+  if (x === 1 && y === 1){
+    return 1;
+  }
+  if (x === -1 && y === 1){
+    return 2;
+  }
+  if (x === -1 && y === -1){
+    return 3;
+  }
+  if (x === 1 && y === -1){
+    return 4;
+  }
+}
 // 262: Training JS #9: loop statement --while and do..while - lvl 8
 function padIt(str,n){
   while(n>0){
