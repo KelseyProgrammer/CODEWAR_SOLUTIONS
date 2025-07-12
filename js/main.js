@@ -1,3 +1,11 @@
+// 265: Remove the time - lvl 8
+function shortenToDate(longDate) {
+  const commaIndex = longDate.indexOf(',');
+  if (commaIndex !== -1) {
+      return longDate.substring(0, commaIndex).trim();
+  }
+  return longDate; 
+}
 // 264 - Rotate for a Max - lvl 7
 function maxRot(n) {
     let s = n.toString();
