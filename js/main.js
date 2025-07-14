@@ -1,3 +1,13 @@
+// 266: Grasshopper - Terminal Game #1 - lvl 8
+class Hero {
+  constructor(name = 'Hero') {
+    this.name = name;
+    this.position = '00';
+    this.health = 100;
+    this.damage = 5;
+    this.experience = 0;
+  }
+}
 // 265: Remove the time - lvl 8
 function shortenToDate(longDate) {
   const commaIndex = longDate.indexOf(',');
