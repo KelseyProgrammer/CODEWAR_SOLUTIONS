@@ -1,3 +1,7 @@
+// 267: Remove duplicates from list - lvl 7
+function distinct(a) {
+  return [...new Set(a)];
+}
 // 266: Grasshopper - Terminal Game #1 - lvl 8
 class Hero {
   constructor(name = 'Hero') {
